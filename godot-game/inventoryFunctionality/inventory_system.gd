@@ -24,6 +24,20 @@ func _ready():
 	add_child(slots_container)
 	
 	_create_slots()
+	
+	# Set size after slots are created
+	call_deferred("_update_size")
+
+func _update_size():
+	# Calculate the size needed for all slots
+	var spacing = 5  # Default HBoxContainer separation
+	var total_width = (slot_size.x * max_slots) + (spacing * (max_slots - 1)) + 20  # +20 for padding
+	var total_height = slot_size.y + 20  # +20 for padding
+	
+	# Just set the size - anchors will handle positioning
+	size = Vector2(total_width, total_height)
+	custom_minimum_size = Vector2(total_width, total_height)
+	print(custom_minimum_size)
 
 func _create_slots():
 	for i in max_slots:

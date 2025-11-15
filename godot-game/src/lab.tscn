@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=24 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_yki8q"]
+[ext_resource type="Script" uid="uid://d0mk3dc5bl31j" path="res://inventoryFunctionality/inventory_system.gd" id="16_agfmk"]
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
+[ext_resource type="PackedScene" uid="uid://d20q7y361u17u" path="res://inventoryFunctionality/inventory_slot.tscn" id="17_1c3td"]
 [ext_resource type="PackedScene" uid="uid://dywb1e1j8cx08" path="res://inventoryFunctionality/labLevelInteractables/scanner.tscn" id="17_rh3ni"]
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
@@ -35,6 +37,8 @@ size = Vector2(1723.5, 39)
 [node name="Node" type="Node"]
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(180, -7)
+scale = Vector2(1.561676, 1.561676)
 
 [node name="LabBackground" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
@@ -140,11 +144,11 @@ texture = ExtResource("8_gs5y5")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(1346.0001, 479)
-scale = Vector2(1.6000001, 1.6000001)
-limit_left = -118
+scale = Vector2(1.6, 1.6)
+limit_left = 1
 limit_top = 1
-limit_right = 1524
-limit_bottom = 699
+limit_right = 2562
+limit_bottom = 1078
 
 [node name="Level Border" type="StaticBody2D" parent="Node2D"]
 
@@ -171,35 +175,78 @@ shape = SubResource("RectangleShape2D_f0omo")
 [node name="Interactables" type="Node" parent="Node2D"]
 
 [node name="Scanner" parent="Node2D/Interactables" instance=ExtResource("17_rh3ni")]
-position = Vector2(294.00012, 367)
-scale = Vector2(2.6721609, 2.6721609)
+position = Vector2(2392.0002, 572)
+scale = Vector2(5.999601, 5.999601)
 
 [node name="Shelf" parent="Node2D/Interactables" instance=ExtResource("18_huwru")]
-position = Vector2(668.00006, 185)
-scale = Vector2(2.4399998, 2.4399998)
+position = Vector2(935, 258)
+scale = Vector2(4.1773195, 4.1773195)
 
 [node name="Beakers" parent="Node2D/Interactables" instance=ExtResource("16_ftuwx")]
-position = Vector2(688.00006, 139.00002)
-scale = Vector2(8.113771, 8.113771)
+position = Vector2(954.9999, 183)
+scale = Vector2(13.669453, 13.669453)
 
 [node name="Whiteboard" parent="Node2D/Interactables" instance=ExtResource("19_mmc43")]
 texture_filter = 1
-position = Vector2(1049, 213)
-scale = Vector2(8.039998, 8.039998)
+position = Vector2(1721, 304)
+scale = Vector2(12.511354, 12.511354)
 
 [node name="Player" parent="Node2D" instance=ExtResource("2_fadfy")]
 z_index = 4
 position = Vector2(1346.0001, 479)
 scale = Vector2(1.6000001, 1.6000001)
+floor_constant_speed = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/Player"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Inventory UI" parent="CanvasLayer" instance=ExtResource("20_mlblw")]
+[node name="Control" type="Control" parent="CanvasLayer" groups=["inventory"]]
+custom_minimum_size = Vector2(705, 84)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -352.5
+offset_top = -84.0
+offset_right = 352.5
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("16_agfmk")
+slot_scene = ExtResource("17_1c3td")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -352.5
+offset_top = -84.0
+offset_right = 352.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Inventory UI2" parent="CanvasLayer" instance=ExtResource("20_mlblw")]
+visible = false
 z_index = 10
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-grow_vertical = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 705.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
