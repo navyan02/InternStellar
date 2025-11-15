@@ -5,49 +5,28 @@ signal item_picked_up(item: ItemData)
 signal item_dropped(item: ItemData)
 
 @export var slot_scene: PackedScene
-@export var max_slots: int = 10
 @export var slot_size: Vector2 = Vector2(64, 64)
+@export var containerOfSlots: HBoxContainer
 
+var max_slots: int = 10
 var inventory: Array[ItemData] = []
 var slots: Array[InventorySlot] = []
 var dragging_item: ItemData = null
 var dragging_slot: InventorySlot = null
 
-var slots_container: HBoxContainer
-
-#func _ready():
-	#add_to_group("inventory")
-	#
-	## Create slots container programmatically
-	#slots_container = HBoxContainer.new()
-	#slots_container.alignment = BoxContainer.ALIGNMENT_CENTER
-	#add_child(slots_container)
-	#
-	#_create_slots()
-	
-	## Set size after slots are created
-	#call_deferred("_update_size")
-#
-#func _update_size():
-	## Calculate the size needed for all slots
-	#var spacing = 5  # Default HBoxContainer separation
-	#var total_width = (slot_size.x * max_slots) + (spacing * (max_slots - 1)) + 20  # +20 for padding
-	#var total_height = slot_size.y + 20  # +20 for padding
-	#
-	## Just set the size - anchors will handle positioning
-	#size = Vector2(total_width, total_height)
-	#custom_minimum_size = Vector2(total_width, total_height)
-	#print(custom_minimum_size)
+func _ready():
+	_create_slots()
 
 func _create_slots():
-	for i in max_slots:
-		var slot = slot_scene.instantiate() as InventorySlot
-		slot.slot_index = i
-		slot.custom_minimum_size = slot_size
-		slot.item_clicked.connect(_on_slot_clicked)
-		slot.drag_started.connect(_on_drag_started)
-		slots_container.add_child(slot)
-		slots.append(slot)
+	if containerOfSlots != null:
+		var i = 0
+		for slot in containerOfSlots.get_children():
+			slot.slot_index = i
+			slot.custom_minimum_size = slot_size
+			slot.item_clicked.connect(_on_slot_clicked)
+			slot.drag_started.connect(_on_drag_started)
+			slots.append(slot)
+			i += 1
 
 func add_item(item: ItemData) -> bool:
 	if inventory.size() >= max_slots:
