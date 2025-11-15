@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=27 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
 [ext_resource type="PackedScene" uid="uid://d20q7y361u17u" path="res://inventoryFunctionality/inventory_slot.tscn" id="17_1c3td"]
 [ext_resource type="PackedScene" uid="uid://dywb1e1j8cx08" path="res://inventoryFunctionality/labLevelInteractables/scanner.tscn" id="17_rh3ni"]
+[ext_resource type="Theme" uid="uid://bs8nkspm4dd87" path="res://inventoryFunctionality/inventoryPanel.tres" id="18_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
 [ext_resource type="PackedScene" uid="uid://bga7ujpnoswdc" path="res://inventoryFunctionality/inventory_ui.tscn" id="20_mlblw"]
@@ -33,6 +34,16 @@ size = Vector2(787.25, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eetg4"]
 size = Vector2(1723.5, 39)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq6c7"]
+bg_color = Color(0.028657842, 0.22389153, 0.31482244, 0.6156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_fq8rk"]
+Panel/styles/panel = SubResource("StyleBoxFlat_jq6c7")
 
 [node name="Node" type="Node"]
 
@@ -218,12 +229,16 @@ grow_vertical = 0
 script = ExtResource("16_agfmk")
 slot_scene = ExtResource("17_1c3td")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+[node name="InventoryBarBackground" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("18_fq8rk")
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/Panel"]
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/Control/InventoryBarBackground"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -236,6 +251,62 @@ offset_right = 352.5
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.0
+offset_top = -32.0
+offset_right = 338.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fq8rk")
+alignment = 1
+
+[node name="inventory_slot2" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot3" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot4" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot5" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot6" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot7" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot8" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot9" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot10" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="inventory_slot11" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("17_1c3td")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 
 [node name="Inventory UI2" parent="CanvasLayer" instance=ExtResource("20_mlblw")]
 visible = false
