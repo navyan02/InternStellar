@@ -6,12 +6,14 @@ class_name Shelf
 
 func _ready():
 	input_event.connect(_on_input_event)
+	set_pickable(true)
 
-func _on_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		pass  # Shelf can be clicked but does nothing when empty
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		_show_dialog("The shelf is empty now.")
 
 func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
+	print("*Shelf*: Something just dropped on me")
 	if dropped_item.item_id == "beakers":
 		_show_dialog("I don't want to put them back. They may come in handy.")
 		# Item stays in inventory (don't remove it)

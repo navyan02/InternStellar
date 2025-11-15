@@ -11,18 +11,20 @@ var message_revealed: bool = false
 
 func _ready():
 	input_event.connect(_on_input_event)
+	set_pickable(true)
 	if message_label:
 		message_label.visible = false
 		message_label.text = hidden_message
 
-func _on_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if message_revealed:
 			_show_dialog(hidden_message)
 		else:
 			_show_dialog("It's just a blank whiteboard... or is it?")
 
 func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
+	print("*Whiteboard*: Something just dropped on me")
 	if dropped_item.item_id == "beakers":
 		if not message_revealed:
 			_reveal_message()

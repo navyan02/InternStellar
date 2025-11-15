@@ -34,8 +34,11 @@ func set_dragging(dragging: bool):
 	is_dragging = dragging
 	if dragging:
 		item_icon.modulate.a = 0.5
+		# Make the icon not block mouse input while dragging
+		item_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:
 		item_icon.modulate.a = 1.0
+		item_icon.mouse_filter = Control.MOUSE_FILTER_PASS
 		# Reset position when done dragging
 		item_icon.position = original_position
 
