@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=26 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
@@ -18,7 +18,6 @@
 [ext_resource type="Theme" uid="uid://bs8nkspm4dd87" path="res://inventoryFunctionality/inventoryPanel.tres" id="18_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
-[ext_resource type="PackedScene" uid="uid://bga7ujpnoswdc" path="res://inventoryFunctionality/inventory_ui.tscn" id="20_mlblw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udwgg"]
 size = Vector2(662.33105, 180.08633)
@@ -214,7 +213,7 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("containerOfSlots") groups=["inventory"]]
+[node name="Inventory" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("containerOfSlots") groups=["inventory"]]
 custom_minimum_size = Vector2(705, 84)
 layout_mode = 3
 anchors_preset = 7
@@ -232,7 +231,7 @@ script = ExtResource("16_agfmk")
 slot_scene = ExtResource("17_1c3td")
 containerOfSlots = NodePath("InventoryBarBackground/HBoxContainer")
 
-[node name="InventoryBarBackground" type="Panel" parent="CanvasLayer/Control"]
+[node name="InventoryBarBackground" type="Panel" parent="CanvasLayer/Inventory"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,7 +240,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("18_fq8rk")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/InventoryBarBackground"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inventory/InventoryBarBackground"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -257,46 +256,32 @@ grow_vertical = 2
 theme = SubResource("Theme_fq8rk")
 alignment = 1
 
-[node name="inventory_slot2" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot2" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot3" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot3" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot4" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot4" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot5" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot5" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot6" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot6" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot7" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot7" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot8" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot8" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot9" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot9" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot10" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot10" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
-[node name="inventory_slot11" parent="CanvasLayer/Control/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
+[node name="inventory_slot11" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
-
-[node name="Inventory UI2" parent="CanvasLayer" instance=ExtResource("20_mlblw")]
-visible = false
-z_index = 10
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_right = 705.0
-offset_bottom = 64.0
-grow_horizontal = 1
-grow_vertical = 1

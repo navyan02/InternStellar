@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxcu67n3jlwte"]
+[gd_scene load_steps=5 format=3 uid="uid://cxcu67n3jlwte"]
 
 [ext_resource type="Script" uid="uid://2p82ptcnlhbn" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.gd" id="1_tfo54"]
 [ext_resource type="Texture2D" uid="uid://q2b8n3qcoyu3" path="res://assets/rooms/whiteboard.png" id="2_tfo54"]
+[ext_resource type="AudioStream" uid="uid://bxufk80rv5ckw" path="res://assets/soundEffects/completedPuzzle.mp3" id="3_ky0kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dqhk"]
-size = Vector2(19.697166, 40.2353)
+size = Vector2(22.774849, 62.58824)
 
 [node name="Whiteboard" type="Area2D"]
 script = ExtResource("1_tfo54")
@@ -14,6 +15,9 @@ texture_filter = 1
 texture = ExtResource("2_tfo54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.9604645e-07, 0)
+position = Vector2(-0.4999988, 5.0193393e-08)
 scale = Vector2(1.6245992, 0.4473684)
 shape = SubResource("RectangleShape2D_0dqhk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ky0kc")
