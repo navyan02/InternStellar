@@ -30,7 +30,11 @@ func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 			_reveal_message()
 			inventory.remove_item(dropped_item)
 			_show_dialog("The invisible writing is revealed!")
+			if $AudioStreamPlayer2D != null:
+				$AudioStreamPlayer2D.play()
 		else:
+			# This should never be displayed as there will only be one set of beakers and they will be consumed after use on whiteboard.
+			# But its here just in case. 
 			_show_dialog("The message is already visible.")
 	else:
 		_show_dialog("Nothing happens.")
