@@ -16,7 +16,9 @@ func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 	print("*Scanner*: Something just dropped on me")
 	if dropped_item.item_id == "beakers":
 		$AnimationPlayer.play("scanUp")
+		$AudioStreamPlayer2D.play(4.5)
 		await $AnimationPlayer.animation_finished
+		$AudioStreamPlayer2D.stop()
 		_show_dialog("99% uninvisible ink detected.")
 		# Item returns to inventory (don't remove it)
 	else:

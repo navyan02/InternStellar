@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dywb1e1j8cx08"]
+[gd_scene load_steps=10 format=3 uid="uid://dywb1e1j8cx08"]
 
 [ext_resource type="Script" uid="uid://cnsaesvidbjpi" path="res://inventoryFunctionality/labLevelInteractables/scanner.gd" id="1_urrwr"]
 [ext_resource type="Texture2D" uid="uid://dmftluad7rxpy" path="res://assets/rooms/Scanner Spritesheet Scanning 32x50.png" id="2_0cbqx"]
+[ext_resource type="AudioStream" uid="uid://01p6fvo71bs7" path="res://assets/soundEffects/printer_scan.mp3" id="3_rls6k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rls6k"]
 radius = 24.0
@@ -97,3 +98,6 @@ root_node = NodePath("../Sprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_u6qvs")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rls6k")
