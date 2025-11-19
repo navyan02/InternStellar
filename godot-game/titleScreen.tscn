@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcsqy7lxanqe4"]
+[gd_scene load_steps=5 format=3 uid="uid://bgiclvcyv66yl"]
 
 [ext_resource type="Theme" uid="uid://d3v4iv3yxucyw" path="res://assets/titleScreen/customTheme.tres" id="1_3b4xv"]
 [ext_resource type="Texture2D" uid="uid://de6xenlqpdc4i" path="res://assets/titleScreen/background.png" id="2_yqvil"]
@@ -21,11 +21,12 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -3.0
-offset_top = 3.0
+offset_top = -12.0
 offset_right = -18.0
-offset_bottom = 6.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0129229, 1.0129229)
 texture = ExtResource("2_yqvil")
 
 [node name="logo" type="TextureRect" parent="."]
@@ -34,6 +35,7 @@ offset_left = 540.0
 offset_top = 274.0
 offset_right = 1440.0
 offset_bottom = 586.7208
+scale = Vector2(1.0129229, 1.0129229)
 texture = ExtResource("3_yqvil")
 expand_mode = 5
 stretch_mode = 5
