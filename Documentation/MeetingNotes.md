@@ -20,7 +20,8 @@
     - Worked on creating our main character.
     - Created white-version of logo with 64-bit pixels.
   - Christina:
-    - Worked on Opening Scene
+    - Worked on Opening Scene.
+    - Created bedroom background.
   - Navya:
     - Worked on the title screen with the buttons.
   - Kundana:
