@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdvo03bsmm6pb"]
+
+[ext_resource type="Texture2D" uid="uid://cjfducwxh8l6h" path="res://assets/rooms/computer.png" id="1_es565"]
+[ext_resource type="Script" uid="uid://vxkkbqvapphf" path="res://inventoryFunctionality/labLevelInteractables/computer.gd" id="1_firhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_firhc"]
+size = Vector2(33, 17)
+
+[node name="Computer" type="Area2D"]
+script = ExtResource("1_firhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_firhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_es565")

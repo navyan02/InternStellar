@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dosog63no7l1p"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dosog63no7l1p"]
 
 [ext_resource type="Texture2D" uid="uid://ovtcflkeusfe" path="res://assets/rooms/beakers.png" id="1_3wlvm"]
 [ext_resource type="Script" uid="uid://c8mhqbeib7aj4" path="res://inventoryFunctionality/item_data.gd" id="1_5vwp0"]
+[ext_resource type="AudioStream" uid="uid://bxufk80rv5ckw" path="res://assets/soundEffects/completedPuzzle.mp3" id="2_5ubyw"]
 
 [resource]
 script = ExtResource("1_5vwp0")
@@ -9,4 +10,5 @@ item_id = "beakers"
 item_name = "Beakers"
 icon = ExtResource("1_3wlvm")
 pickup_dialog = "These are some interesting chemicals..."
+pickup_sound = ExtResource("2_5ubyw")
 metadata/_custom_type_script = "uid://c8mhqbeib7aj4"

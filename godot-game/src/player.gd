@@ -17,10 +17,7 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.distance_to(posToGoTo) > 5:
 		move_and_slide()
-		print("Position to go to: ", posToGoTo)
-		print("Local Position: ", position)
-		print("Global Position: ", global_position)
-		print("\n")
+		
 		#print(velocity)
 		if abs(velocity.x) < 1 and abs(velocity.y) < 1:
 			#print("Not Moving")

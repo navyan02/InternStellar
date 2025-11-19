@@ -37,6 +37,8 @@ func _pickup_item():
 	var inventory = get_tree().get_first_node_in_group("inventory")
 	if inventory and inventory.add_item(item_data):
 		_show_dialog(item_data.pickup_dialog)
+		if item_data.pickup_sound:
+			_play_noise(item_data.pickup_sound)
 		queue_free()  # Remove from world
 
 func _show_dialog(text: String):
@@ -45,6 +47,13 @@ func _show_dialog(text: String):
 		dialog.show_message(text)
 	else:
 		print("Dialog: ", text)
+
+func _play_noise(sound):
+	print(sound)
+	var audio_player = AudioStreamPlayer2D.new()
+	add_child(audio_player)
+	audio_player.stream = sound
+	audio_player.play()
 
 func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 	print("dropped")
