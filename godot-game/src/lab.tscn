@@ -1,15 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=24 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
-[ext_resource type="Texture2D" uid="uid://rmt2efj3jrjp" path="res://assets/rooms/bookPuzzle.png" id="3_7ojfn"]
-[ext_resource type="Texture2D" uid="uid://c7mnngtoltt14" path="res://assets/rooms/bookshelf.png" id="3_udwgg"]
-[ext_resource type="Texture2D" uid="uid://cjfducwxh8l6h" path="res://assets/rooms/computer.png" id="4_ic0bi"]
-[ext_resource type="Texture2D" uid="uid://dyunyb7i4erfa" path="res://assets/rooms/diploma.png" id="5_f0omo"]
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="7_40yeu"]
-[ext_resource type="Texture2D" uid="uid://cq8yaxsspdip5" path="res://assets/rooms/trashcan.png" id="8_gs5y5"]
 [ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
+[ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://b437fbqn5osq1" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://cdvo03bsmm6pb" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
+[ext_resource type="PackedScene" uid="uid://65ncto0qy15l" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_yki8q"]
 [ext_resource type="Script" uid="uid://d0mk3dc5bl31j" path="res://inventoryFunctionality/inventory_system.gd" id="16_agfmk"]
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
@@ -24,9 +23,6 @@ size = Vector2(662.33105, 180.08633)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic0bi"]
 size = Vector2(356.94965, 66.93161)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs5y5"]
-size = Vector2(14.698494, 18.291473)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0omo"]
 size = Vector2(787.25, 39)
@@ -67,50 +63,6 @@ z_index = -1
 position = Vector2(-23.67273, -48.748215)
 shape = SubResource("RectangleShape2D_udwgg")
 
-[node name="Bookshelf" type="Sprite2D" parent="Node2D"]
-texture_filter = 1
-position = Vector2(4.794503, 328.1977)
-scale = Vector2(8.6575365, 8.6575365)
-texture = ExtResource("3_udwgg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Bookshelf"]
-texture_filter = 1
-position = Vector2(-0.86181206, 8.293619)
-scale = Vector2(1.1550626, 1.1550626)
-texture = ExtResource("3_7ojfn")
-
-[node name="InteractArea" parent="Node2D/Bookshelf" node_paths=PackedStringArray("player") instance=ExtResource("8_ic0bi")]
-position = Vector2(-0.6693016, 8.640137)
-scale = Vector2(0.3362826, 0.40583453)
-userDialog = "This is a bookshelf. It's kind of disorganized"
-player = NodePath("../../Player")
-
-[node name="Computer" type="Sprite2D" parent="Node2D"]
-z_index = 3
-texture_filter = 1
-position = Vector2(707.54, 395.125)
-scale = Vector2(6.729999, 6.7299976)
-texture = ExtResource("4_ic0bi")
-
-[node name="InteractArea" parent="Node2D/Computer" node_paths=PackedStringArray("player") instance=ExtResource("8_ic0bi")]
-position = Vector2(0.70708025, -0.28283513)
-scale = Vector2(0.48893905, 0.5900643)
-userDialog = "This is a computer. It seems to be locked. The password hint just says \"whiteboard\""
-player = NodePath("../../Player")
-
-[node name="Diploma" type="Sprite2D" parent="Node2D"]
-texture_filter = 1
-position = Vector2(1348.1654, 131.89377)
-scale = Vector2(7.2144227, 7.2144237)
-texture = ExtResource("5_f0omo")
-
-[node name="InteractArea" parent="Node2D/Diploma" node_paths=PackedStringArray("player") instance=ExtResource("8_ic0bi")]
-position = Vector2(0.53151506, -0.26249692)
-scale = Vector2(0.20461296, 0.31838635)
-userDialog = "This is a diploma. It says \"Dr. so and so went to KU and got a doctorate in Aerospace with a focus in extraterrestrial studies\"... Weird."
-player = NodePath("../../Player")
-addToInventory = true
-
 [node name="Chair" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(613.5, 420.58334)
@@ -138,19 +90,6 @@ position = Vector2(32.484467, -1.7033119)
 scale = Vector2(-0.55689615, 0.5608738)
 userDialog = "The drawers are locked..."
 player = NodePath("../../../Player")
-
-[node name="Trash" type="StaticBody2D" parent="Node2D"]
-z_index = 2
-position = Vector2(1205, 552)
-scale = Vector2(7.96, 7.96)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Trash"]
-position = Vector2(-0.06283569, 0.85427856)
-shape = SubResource("RectangleShape2D_gs5y5")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Trash"]
-texture_filter = 1
-texture = ExtResource("8_gs5y5")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(1346.0001, 479)
@@ -185,6 +124,10 @@ shape = SubResource("RectangleShape2D_f0omo")
 
 [node name="Interactables" type="Node" parent="Node2D"]
 
+[node name="Bookshelf" parent="Node2D/Interactables" instance=ExtResource("10_fq8rk")]
+position = Vector2(181, -1)
+scale = Vector2(1.56705, 1.56705)
+
 [node name="Scanner" parent="Node2D/Interactables" instance=ExtResource("17_rh3ni")]
 position = Vector2(2392.0002, 572)
 scale = Vector2(5.999601, 5.999601)
@@ -201,6 +144,18 @@ scale = Vector2(13.669453, 13.669453)
 texture_filter = 1
 position = Vector2(1721, 304)
 scale = Vector2(12.511354, 12.511354)
+
+[node name="Diploma" parent="Node2D/Interactables" instance=ExtResource("15_fq8rk")]
+position = Vector2(2208, 203)
+scale = Vector2(12.62462, 12.62462)
+
+[node name="Computer" parent="Node2D/Interactables" instance=ExtResource("15_ftuwx")]
+z_index = 2
+position = Vector2(1248.0001, 614)
+scale = Vector2(11.970797, 11.970797)
+
+[node name="Trash" parent="Node2D/Interactables" instance=ExtResource("15_rh3ni")]
+scale = Vector2(1.6827717, 1.5191358)
 
 [node name="Player" parent="Node2D" instance=ExtResource("2_fadfy")]
 z_index = 4
