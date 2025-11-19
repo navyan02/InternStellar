@@ -1,3 +1,45 @@
+---
+## **Meeting Title:** Team Meeting
+### **Date:** Wednesday, November 11th, 2025
+---
+#### 👥 Attendees
+
+- Katie Nordberg, Vivian Lara, Christina Sorensen, Kundana Dongala, Navya Nittala
+
+### 📒 Notes
+- Reviewed progress since previous team meeting
+  - Katie:
+    - Got dialogue working to see what the interactions are saying.
+    - Added interactions for when you click on the diploma, invisible inc, computer, and other interactable objects.
+    - Made it full screen & improved look.
+    - Started artwork for the computer's screen.
+    - Worked on a lot of bugs.
+    - Integrated the scanner into the actual code and added sound effect.
+    - Added sound effect for putting the beakers on the whiteboard.
+  - Vi:
+    - Worked on creating our main character.
+    - Created white-version of logo with 64-bit pixels.
+  - Christina:
+    - Worked on Opening Scene
+  - Navya:
+    - Worked on the title screen with the buttons.
+  - Kundana:
+    - Worked on the background for the title screen.
+    - Drew some alien characters.
+- Assigned tasks to be completed by next meeting:
+  - [ ] Vi: Fixing theme song.
+  - [ ] Vi: Creating different poses for the characters.
+  - [ ] Vi: Put music on main scene.
+  - [ ] Katie: Getting the computer to pop up for different cases whenever you click on it (Puzzle).
+  - [ ] Katie: Figure out how to transition between scenes.
+  - [ ] Katie: Make a boy npc.
+  - [ ] Christina: Finish opening scene.
+  - [ ] Christina: Edit the NPCs to create more. 
+  - [ ] Navya: Bookshelf puzzle (launch bigger screen to move the books around)
+  - [ ] Kundana: Create office scene.
+
+---
+
 ## **Meeting Title:** TA Meeting
 ### **Date:** Thursday, November 13th, 2025
 ---
