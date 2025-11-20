@@ -25,17 +25,17 @@ scale = Vector2(38.791695, 42.2378)
 texture = ExtResource("1_ujhis")
 
 [node name="Coffeepot" type="Sprite2D" parent="."]
-position = Vector2(4282, 1339)
-scale = Vector2(10.029018, 11.116439)
+position = Vector2(3820.6797, 1676.585)
+scale = Vector2(9.0004225, 9.702164)
 texture = ExtResource("2_hye3w")
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(-1003, 2563)
-scale = Vector2(14.269836, 12.732006)
+position = Vector2(-1361.6064, 3002.308)
+scale = Vector2(12.463254, 9.313266)
 texture = ExtResource("3_vfgj6")
 
 [node name="Flower" type="Sprite2D" parent="."]
-position = Vector2(-999, 493)
+position = Vector2(-1329.9835, 1370.2859)
 scale = Vector2(3.3365388, 2.7201924)
 texture = ExtResource("4_3xwue")
 
@@ -60,16 +60,19 @@ scale = Vector2(5.8670783, 6.184049)
 texture = ExtResource("7_ynrh5")
 
 [node name="Player (CharacterBody2D)" parent="." instance=ExtResource("8_hye3w")]
+visible = false
 position = Vector2(-5714.897, 2192.4573)
 scale = Vector2(19.9778, 19.9778)
 
 [node name="BlockPlayerMovement" type="StaticBody2D" parent="."]
+visible = false
 show_behind_parent = true
 z_index = 1
 position = Vector2(-5577.5664, 2192.4573)
 scale = Vector2(5.7409835, 5.7409835)
 
 [node name="Block wall" type="CollisionShape2D" parent="BlockPlayerMovement"]
+visible = false
 z_index = 1
 position = Vector2(1047.352, -444.37482)
 scale = Vector2(2.5017161, 5.269356)
