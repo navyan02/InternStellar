@@ -1,3 +1,23 @@
+
+## **Meeting Title:** TA Meeting
+### **Date:** Thursday, November 20th, 2025
+---
+#### 👥 Attendees
+
+- Navya Nittala, Kundana Dongala, Katie Nordberg, Christina Sorensen, Vivian Lara, Kevin Likcani(TA)
+
+### 📒 Notes/ToDo
+- We reported our updates to Kevin.
+- [ ] Add sprint 4 artifacts and update requirements and reference sheet
+- [ ] video and final submission due Dec 1st
+  - video is 50% of the presentation grade
+  - 8-10 minutes total
+    - <1 min project description (15 points)
+    - 6-8 mins of demo (can include cut screen, voiceover, go over every detail, break down code and design process) (35 points)
+    - <1 min future plans
+  - upload it to github and submit link
+  - not everyone has to be in the video/speak
+
 ---
 ## **Meeting Title:** Team Meeting
 ### **Date:** Wednesday, November 11th, 2025
@@ -33,7 +53,7 @@
   - [ ] Vi: Put music on main scene.
   - [ ] Katie: Getting the computer to pop up for different cases whenever you click on it (Puzzle).
   - [ ] Katie: Figure out how to transition between scenes.
-  - [ ] Katie: Make a boy npc.
+  - [X] Katie: Make a boy npc.
   - [ ] Christina: Finish opening scene.
   - [ ] Christina: Edit the NPCs to create more. 
   - [ ] Navya: Bookshelf puzzle (launch bigger screen to move the books around)
