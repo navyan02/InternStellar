@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgiclvcyv66yl"]
+[gd_scene load_steps=5 format=3 uid="uid://dcsqy7lxanqe4"]
 
 [ext_resource type="Theme" uid="uid://d3v4iv3yxucyw" path="res://assets/titleScreen/customTheme.tres" id="1_3b4xv"]
 [ext_resource type="Texture2D" uid="uid://de6xenlqpdc4i" path="res://assets/titleScreen/background.png" id="2_yqvil"]
@@ -31,10 +31,10 @@ texture = ExtResource("2_yqvil")
 
 [node name="logo" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 274.0
-offset_right = 1440.0
-offset_bottom = 586.7208
+offset_left = 487.0
+offset_top = 260.0
+offset_right = 1439.3239
+offset_bottom = 604.723
 scale = Vector2(1.0129229, 1.0129229)
 texture = ExtResource("3_yqvil")
 expand_mode = 5
@@ -42,10 +42,10 @@ stretch_mode = 5
 
 [node name="startButton" type="Button" parent="logo"]
 layout_mode = 0
-offset_left = -19.0
-offset_top = 176.0
-offset_right = 535.0
-offset_bottom = 521.0
+offset_left = -106.62213
+offset_top = 175.72906
+offset_right = 645.5711
+offset_bottom = 632.55835
 theme = ExtResource("1_3b4xv")
 theme_override_constants/outline_size = 3
 text = "Start Game"
@@ -56,10 +56,10 @@ expand_icon = true
 
 [node name="viewMap" type="Button" parent="logo"]
 layout_mode = 0
-offset_left = 222.0
-offset_top = 176.0
-offset_right = 844.0
-offset_bottom = 517.0
+offset_left = 195.47394
+offset_top = 181.65253
+offset_right = 1021.79553
+offset_bottom = 626.62775
 theme_override_constants/outline_size = 3
 text = "View Map"
 icon = ExtResource("4_yqvil")
@@ -74,10 +74,10 @@ anchor_left = -0.56700003
 anchor_top = -0.76400006
 anchor_right = 1.5000001
 anchor_bottom = 2.598
-offset_left = 654.30005
-offset_top = 534.91876
-offset_right = -684.0001
-offset_bottom = -140.44879
+offset_left = 672.2581
+offset_top = 578.29865
+offset_right = -641.54877
+offset_bottom = -102.933655
 theme_override_constants/outline_size = 3
 text = "Exit"
 icon = ExtResource("4_yqvil")
