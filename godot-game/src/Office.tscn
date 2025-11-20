@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://jmwttottf74j"]
+[gd_scene load_steps=13 format=3 uid="uid://jmwttottf74j"]
 
 [ext_resource type="Texture2D" uid="uid://wrthydkx10mc" path="res://assets/Office/OfficeBackground.png" id="1_ujhis"]
 [ext_resource type="Texture2D" uid="uid://dn4xj27xsnsba" path="res://assets/Office/coffeepot.png" id="2_hye3w"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://du3mydbh8ev0q" path="res://assets/Office/TV backgroud.png" id="6_cdbuu"]
 [ext_resource type="Texture2D" uid="uid://c1fpkhumbk1md" path="res://assets/Office/bean.png" id="7_ynrh5"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="8_hye3w"]
+[ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="9_vfgj6"]
+[ext_resource type="PackedScene" uid="uid://t4x28uy2bxb3" path="res://src/npc1.tscn" id="10_3xwue"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1v5ov"]
 load_path = "res://.godot/imported/TV backgroud.png-bc3d42353a049bf50308cd1790ed3a9b.ctex"
@@ -60,20 +62,23 @@ scale = Vector2(5.8670783, 6.184049)
 texture = ExtResource("7_ynrh5")
 
 [node name="Player (CharacterBody2D)" parent="." instance=ExtResource("8_hye3w")]
-visible = false
 position = Vector2(-5714.897, 2192.4573)
 scale = Vector2(19.9778, 19.9778)
 
 [node name="BlockPlayerMovement" type="StaticBody2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = 1
 position = Vector2(-5577.5664, 2192.4573)
 scale = Vector2(5.7409835, 5.7409835)
 
 [node name="Block wall" type="CollisionShape2D" parent="BlockPlayerMovement"]
-visible = false
 z_index = 1
 position = Vector2(1047.352, -444.37482)
 scale = Vector2(2.5017161, 5.269356)
 shape = SubResource("RectangleShape2D_hye3w")
+
+[node name="Dialog System" parent="." instance=ExtResource("9_vfgj6")]
+
+[node name="NPC1" parent="." instance=ExtResource("10_3xwue")]
+position = Vector2(1644.3427, 1733.0085)
+scale = Vector2(62.11986, 58.53094)
