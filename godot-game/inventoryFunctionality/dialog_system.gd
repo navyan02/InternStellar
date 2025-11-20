@@ -10,7 +10,7 @@ var timer: Timer
 
 func _ready():
 	add_to_group("dialog")
-	dialog_panel.visible = false
+	#dialog_panel.visible = true
 	
 	# Create timer programmatically
 	timer = Timer.new()
