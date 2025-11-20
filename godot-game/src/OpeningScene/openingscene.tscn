@@ -104,6 +104,42 @@ tracks/6/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OpeningScene/Computer:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-58.80493, 72.49963)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("OpeningScene/Computer:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("OpeningScene/Diploma:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_mlblw"]
 resource_name = "opening"
@@ -139,7 +175,7 @@ tracks/2/path = NodePath("OpeningScene/Dialog System")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.03333336, 7.9666667, 13.066667, 18.066668),
+"times": PackedFloat32Array(0.03333336, 7.9333334, 13.066667, 18.066668),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": ["It's finally happening... The first ship has made it to Earth.", 8.0],
@@ -186,10 +222,46 @@ tracks/5/path = NodePath("OpeningScene/Trash:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.03333333, 17.9, 18.066668, 18.233334, 18.39145, 18.53145, 18.70145, 18.841452, 19.033335, 19.166668, 19.36145),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.03333333, 17.9, 18.066668, 18.233334, 18.39145, 18.53145, 18.70145, 18.841452, 19.033335, 19.166668, 19.36145, 19.53145, 19.651451, 19.833334, 19.991451, 20.13145, 20.261452, 20.401451, 20.55145, 20.70145, 20.841452, 21.000002, 21.151451, 21.300001, 21.421452, 21.561451, 21.78145, 21.966667, 22.066668, 22.22145, 22.351452, 22.491451, 22.63145, 22.811451, 23.011452, 23.181452, 23.331451, 23.500002, 23.671452, 23.761452, 23.941452, 24.101452, 24.261452, 24.441452, 24.651451, 24.811451, 24.966667, 25.12145, 25.311451, 25.47145, 25.661451, 25.821451, 25.97145),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757]
+"values": [0.0, 0.0, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757, -0.07546977, 0.04394757]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("OpeningScene/Computer:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(17.766666, 20.7, 22.566668, 24.433332, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-58.80493, 72.49963), Vector2(-60, -105), Vector2(-60, -10), Vector2(-62, -110), Vector2(-60, -10)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OpeningScene/Computer:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(18.633333, 19, 19.566668, 20.2, 20.4, 21.033333, 21.633333, 22.266666, 22.933332, 23.666666, 24.366667, 25.066668, 25.766666, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.8608116, 3.2433586, 5.513271, 6.2882767, 8.543343, 10.999424, 13.324409, 15.749627, 18.828388, 21.924068, 25.027824, 27.992043, 28.675938]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("OpeningScene/Diploma:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15.033334, 15.141897, 15.361897, 15.566667, 15.8, 16.02145, 16.241451, 16.44145, 16.671452, 16.911451, 17.133335, 17.38145, 17.64145, 17.831451, 18.091452, 18.300001, 18.521452, 18.751451, 19.05145, 19.331451, 19.633335, 19.87145, 20.11145, 20.366667, 20.661451, 20.88145, 21.171452, 21.500002, 21.80145, 22.061451, 22.321451, 22.571451, 22.80145, 23.011452, 23.271452, 23.501451, 23.771452, 24.066668, 24.341452, 24.601452, 24.95145, 25.271452, 25.531452, 25.80145, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921, 0.062796585, -0.08171921]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4xbu1"]
