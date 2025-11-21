@@ -178,7 +178,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.03333336, 7.9333334, 13.066667, 18.066668),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
-"args": ["It's finally happening... The first ship has made it to Earth.", 8.0],
+"args": ["It's finally happening... The first ship has made it to Earth.", 5.0],
 "method": &"show_message"
 }, {
 "args": ["I GOT IT! I KNOW HOW TO STOP THE INVASION!!!", 5.0],

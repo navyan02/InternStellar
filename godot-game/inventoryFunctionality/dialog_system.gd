@@ -1,7 +1,6 @@
 extends CanvasLayer
 class_name DialogSystem
 
-@export var display_time: float = 3.0
 @export var typewriter_speed: float = 0.03  # seconds per character
 
 @onready var dialog_panel = $Panel
@@ -19,8 +18,12 @@ func _ready():
 	timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout)
+	
+#	Initially hide the dialog.
+	hide_dialog()
 
-func show_message(text: String, duration: float = -1.0):
+func show_message(text: String, duration: float = 3.0):
 	full_text = text
 	dialog_label.text = ""
 	dialog_panel.visible = true
@@ -28,12 +31,12 @@ func show_message(text: String, duration: float = -1.0):
 	typing = true
 	typing_index = 0
 	
-	# STOP the hide timer. We won't use it.
-	timer.stop()
+	# Stop any existing timer
+	#timer.stop()
 	
-	_process_typewriter()
+	_process_typewriter(duration)
 
-func _process_typewriter() -> void:
+func _process_typewriter(duration) -> void:
 	if not typing:
 		return
 	
@@ -42,12 +45,14 @@ func _process_typewriter() -> void:
 		typing_index += 1
 		
 		await get_tree().create_timer(typewriter_speed).timeout
-		_process_typewriter()
+		_process_typewriter(duration)
 	else:
-		# Finished typing
+		# Finished typing - start the display timer
 		typing = false
-		# DO NOT start any timer here. Text stays visible until manually hidden.
-		pass
+		timer.start(duration)
+
+func _on_timer_timeout():
+	hide_dialog()
 
 func hide_dialog():
 	dialog_panel.visible = false
