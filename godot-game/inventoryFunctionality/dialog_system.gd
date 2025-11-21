@@ -5,6 +5,7 @@ class_name DialogSystem
 
 @onready var dialog_panel = $Panel
 @onready var dialog_label = $Panel/MarginContainer/Label
+@onready var audioPlayer = $AudioStreamPlayer2D
 
 var timer: Timer
 var typing := false
@@ -23,7 +24,10 @@ func _ready():
 #	Initially hide the dialog.
 	hide_dialog()
 
-func show_message(text: String, duration: float = 3.0):
+func show_message(text: String, duration: float = 3.0, playTypingSound: bool = true):
+	# Stop any existing timer first to prevent premature hiding
+	timer.stop()
+	
 	full_text = text
 	dialog_label.text = ""
 	dialog_panel.visible = true
@@ -31,9 +35,13 @@ func show_message(text: String, duration: float = 3.0):
 	typing = true
 	typing_index = 0
 	
-	# Stop any existing timer
-	#timer.stop()
+	# Always stop the audio player attached to the dialog system before playing the next sound
+	# Because if we don't stop it, the typewriting could overlap with audio lines potentially
+	audioPlayer.stop()
 	
+	if playTypingSound:
+		audioPlayer.play()
+		
 	_process_typewriter(duration)
 
 func _process_typewriter(duration) -> void:
@@ -49,10 +57,12 @@ func _process_typewriter(duration) -> void:
 	else:
 		# Finished typing - start the display timer
 		typing = false
+		audioPlayer.stop()
 		timer.start(duration)
 
 func _on_timer_timeout():
 	hide_dialog()
+	
 
 func hide_dialog():
 	dialog_panel.visible = false
