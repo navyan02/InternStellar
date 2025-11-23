@@ -107,6 +107,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_2pvpr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gb4bn")
 text = "EXIT"
 icon = ExtResource("4_kygfj")
+flat = true
 autowrap_mode = 3
 icon_alignment = 1
 expand_icon = true
