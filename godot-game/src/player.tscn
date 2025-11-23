@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpux7mjnmklvb"]
 
 [ext_resource type="Script" uid="uid://bhmgbdgnmta74" path="res://src/player.gd" id="1_gmfve"]
-[ext_resource type="Texture2D" uid="uid://bgwk7gnv6oct2" path="res://assets/characters/Alien.png" id="2_gmfve"]
+[ext_resource type="Texture2D" uid="uid://buyuy2wjnr38g" path="res://assets/characters/intern_spritesheet_36x60frames.png" id="2_gmfve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(57.5, 33)
+size = Vector2(57.5, 23)
 
 [sub_resource type="Animation" id="Animation_bktlc"]
 length = 0.001
@@ -35,7 +35,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_gmfve"]
 resource_name = "player_idle"
-length = 0.2
+length = 0.5
 loop_mode = 1
 step = 0.033
 tracks/0/type = "value"
@@ -45,7 +45,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -53,9 +53,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_pg28d"]
 resource_name = "player_walk_left"
-length = 0.4
+length = 0.6
 loop_mode = 1
-step = 0.033
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -75,15 +75,15 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.002775558, 0.099999994, 0.2, 0.3),
+"times": PackedFloat32Array(0.002775558, 0.15, 0.3, 0.45),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3, 4, 5, 4]
+"values": [3, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_ehvfd"]
 resource_name = "player_walk_right"
-length = 0.4
+length = 0.6
 loop_mode = 1
 step = 0.033
 tracks/0/type = "value"
@@ -91,12 +91,12 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3, 4, 5, 4]
+"values": [3, 2, 3, 4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -123,21 +123,20 @@ _data = {
 script = ExtResource("1_gmfve")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.25, 70.5)
+position = Vector2(1.25, 75.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="Alien" type="Sprite2D" parent="."]
+[node name="Intern" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, 7)
-scale = Vector2(10.1500025, 10.1500025)
+scale = Vector2(2.7497308, 2.7497308)
 texture = ExtResource("2_gmfve")
 flip_h = true
-hframes = 3
-vframes = 2
+hframes = 5
 frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Alien")
+root_node = NodePath("../Intern")
 libraries = {
 &"": SubResource("AnimationLibrary_21lrq")
 }

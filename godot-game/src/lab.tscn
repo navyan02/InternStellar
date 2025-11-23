@@ -93,7 +93,7 @@ player = NodePath("../../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(1346.0001, 479)
-scale = Vector2(1.6, 1.6)
+scale = Vector2(2.1749554, 2.1749554)
 limit_left = 1
 limit_top = 1
 limit_right = 2562
@@ -160,7 +160,7 @@ scale = Vector2(1.6827717, 1.5191358)
 [node name="Player" parent="Node2D" instance=ExtResource("2_fadfy")]
 z_index = 4
 position = Vector2(1346.0001, 479)
-scale = Vector2(1.6000001, 1.6000001)
+scale = Vector2(2.1749554, 2.1749554)
 floor_constant_speed = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/Player"]
