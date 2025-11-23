@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2evldibjxv2l"]
+[gd_scene load_steps=21 format=3 uid="uid://d2evldibjxv2l"]
 
 [ext_resource type="Script" uid="uid://cylkxs4vbnjia" path="res://src/OpeningScene/openingscene.gd" id="1_5qnxw"]
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="2_rqt62"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bmqg3gqhxkxch" path="res://assets/rooms/shelf.png" id="12_5jmxm"]
 [ext_resource type="Texture2D" uid="uid://u22a4nt8ca6a" path="res://src/OpeningScene/green screen.jpg" id="12_613f1"]
 [ext_resource type="Texture2D" uid="uid://dqlvk5j0v6uji" path="res://src/OpeningScene/black screen.jpg" id="12_wrnp1"]
+[ext_resource type="AudioStream" uid="uid://lo02tdtqkv4c" path="res://src/OpeningScene/At All Costs - The Grey Room _ Golden Palms.mp3" id="14_1mnex"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_1mnex"]
+[ext_resource type="AudioStream" uid="uid://de6if7e257lb4" path="res://src/OpeningScene/Digital Watch Alarm Long.mp3" id="15_8e0t2"]
 
 [sub_resource type="Animation" id="Animation_5qnxw"]
 length = 25.0
@@ -140,10 +142,46 @@ tracks/9/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("OpeningScene/alieninvasion:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("OpeningScene/alieninvasion:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-19.467]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OpeningScene/alarm:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_mlblw"]
 resource_name = "opening"
-length = 26.0
+length = 35.0
 capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -176,8 +214,8 @@ tracks/2/path = NodePath("OpeningScene/Dialog System")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.03333336, 7.9333334, 13.066667, 18.066668),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.03333336, 7.9333334, 13.066667, 18.066668, 28.933332, 33),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
 "args": ["It's finally happening... The first ship has made it to Earth.", 5.0, true],
 "method": &"show_message"
@@ -189,6 +227,12 @@ tracks/2/keys = {
 "method": &"show_message"
 }, {
 "args": ["Welp.", 3.0],
+"method": &"show_message"
+}, {
+"args": ["Noooooooooooooooooooooooo", 3.0, true],
+"method": &"show_message"
+}, {
+"args": ["I'M LATE!!!!", 2.0, true],
 "method": &"show_message"
 }]
 }
@@ -300,6 +344,42 @@ tracks/11/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OpeningScene/alieninvasion:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1, 25.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OpeningScene/alieninvasion:volume_db")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(23.133333, 25.766666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-19.467, -80.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("OpeningScene/alarm:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(25.933332, 32.066666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4xbu1"]
 _data = {
@@ -400,6 +480,14 @@ offset_top = -839.0
 offset_right = 1232.0
 offset_bottom = 727.0
 color = Color(0, 0, 0, 1)
+
+[node name="alieninvasion" type="AudioStreamPlayer" parent="OpeningScene"]
+stream = ExtResource("14_1mnex")
+volume_db = -19.467
+
+[node name="alarm" type="AudioStreamPlayer" parent="OpeningScene"]
+stream = ExtResource("15_8e0t2")
+volume_db = 8.988
 
 [node name="Camera2D" type="Camera2D" parent="OpeningScene"]
 z_index = 3
