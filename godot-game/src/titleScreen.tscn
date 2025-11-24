@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgiclvcyv66yl"]
+[gd_scene load_steps=13 format=3 uid="uid://bgiclvcyv66yl"]
 
 [ext_resource type="Theme" uid="uid://d3v4iv3yxucyw" path="res://assets/titleScreen/customTheme.tres" id="1_qaoob"]
 [ext_resource type="Texture2D" uid="uid://de6xenlqpdc4i" path="res://assets/titleScreen/background.png" id="2_gb4bn"]
 [ext_resource type="Script" uid="uid://dwpowriy34261" path="res://src/title_screen.gd" id="2_wcofg"]
 [ext_resource type="Texture2D" uid="uid://dpiyyppisyavy" path="res://assets/titleScreen/white_logo.png" id="3_wcofg"]
 [ext_resource type="Texture2D" uid="uid://daq0t5rc58b6d" path="res://assets/titleScreen/button.png" id="4_kygfj"]
+[ext_resource type="AudioStream" uid="uid://blc634my7a4eq" path="res://assets/music/main_theme.mp3" id="6_wcofg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcofg"]
 
@@ -111,6 +112,10 @@ flat = true
 autowrap_mode = 3
 icon_alignment = 1
 expand_icon = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wcofg")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=25 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
 [ext_resource type="PackedScene" uid="uid://d20q7y361u17u" path="res://inventoryFunctionality/inventory_slot.tscn" id="17_1c3td"]
 [ext_resource type="PackedScene" uid="uid://dywb1e1j8cx08" path="res://inventoryFunctionality/labLevelInteractables/scanner.tscn" id="17_rh3ni"]
+[ext_resource type="AudioStream" uid="uid://blc634my7a4eq" path="res://assets/music/main_theme.mp3" id="18_1c3td"]
 [ext_resource type="Theme" uid="uid://bs8nkspm4dd87" path="res://inventoryFunctionality/inventoryPanel.tres" id="18_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
@@ -240,3 +241,7 @@ layout_mode = 2
 
 [node name="inventory_slot11" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_1c3td")
+autoplay = true
