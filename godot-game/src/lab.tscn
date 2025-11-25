@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
 [ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
-[ext_resource type="PackedScene" uid="uid://cahjvftfkwhiq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
+[ext_resource type="PackedScene" uid="uid://o4xvooyp5pqq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
 [ext_resource type="PackedScene" uid="uid://b437fbqn5osq1" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://cdvo03bsmm6pb" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
 [ext_resource type="PackedScene" uid="uid://65ncto0qy15l" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
@@ -167,10 +167,7 @@ floor_constant_speed = true
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="LockedComputerScreen" parent="Node2D" instance=ExtResource("15_1c3td")]
-visible = false
-scale = Vector2(2.5782819, 2.5782819)
-transform = Transform2D(2.5782819, 0, 0, 2.5782819, 0, 0)
+[node name="LockedComputerScreen" parent="." instance=ExtResource("15_1c3td")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
