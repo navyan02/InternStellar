@@ -150,10 +150,11 @@ scale = Vector2(12.511354, 12.511354)
 position = Vector2(2208, 203)
 scale = Vector2(12.62462, 12.62462)
 
-[node name="Computer" parent="Node2D/Interactables" instance=ExtResource("15_ftuwx")]
+[node name="Computer" parent="Node2D/Interactables" node_paths=PackedStringArray("computerScreenNode") instance=ExtResource("15_ftuwx")]
 z_index = 2
 position = Vector2(1248.0001, 614)
 scale = Vector2(11.970797, 11.970797)
+computerScreenNode = NodePath("../../../LockedComputerScreen")
 
 [node name="Trash" parent="Node2D/Interactables" instance=ExtResource("15_rh3ni")]
 scale = Vector2(1.6827717, 1.5191358)
@@ -166,8 +167,6 @@ floor_constant_speed = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/Player"]
 remote_path = NodePath("../../Camera2D")
-
-[node name="LockedComputerScreen" parent="." instance=ExtResource("15_1c3td")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -243,3 +242,7 @@ layout_mode = 2
 
 [node name="inventory_slot11" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
+
+[node name="LockedComputerScreen" parent="." instance=ExtResource("15_1c3td")]
+layer = 2
+visible = false

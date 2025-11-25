@@ -4,6 +4,7 @@
 extends Area2D
 class_name Computer
 
+@export var computerScreenNode : Node
 var alreadyClicked = false
 
 func _ready():
@@ -35,3 +36,4 @@ func _show_dialog(text: String):
 
 func showComputer():
 	print("show computer")
+	computerScreenNode.visible = true
