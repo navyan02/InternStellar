@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2evldibjxv2l"]
+[gd_scene load_steps=24 format=3 uid="uid://d2evldibjxv2l"]
 
 [ext_resource type="Script" uid="uid://cylkxs4vbnjia" path="res://src/OpeningScene/openingscene.gd" id="1_5qnxw"]
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="2_rqt62"]
@@ -13,10 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://cq8yaxsspdip5" path="res://assets/rooms/trashcan.png" id="11_c85pf"]
 [ext_resource type="Texture2D" uid="uid://bmqg3gqhxkxch" path="res://assets/rooms/shelf.png" id="12_5jmxm"]
 [ext_resource type="Texture2D" uid="uid://u22a4nt8ca6a" path="res://src/OpeningScene/green screen.jpg" id="12_613f1"]
+[ext_resource type="Texture2D" uid="uid://dvi66k3hpkvdw" path="res://src/OpeningScene/Henry1-1.png.png" id="12_npopg"]
 [ext_resource type="Texture2D" uid="uid://dqlvk5j0v6uji" path="res://src/OpeningScene/black screen.jpg" id="12_wrnp1"]
 [ext_resource type="AudioStream" uid="uid://lo02tdtqkv4c" path="res://src/OpeningScene/At All Costs - The Grey Room _ Golden Palms.mp3" id="14_1mnex"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_1mnex"]
 [ext_resource type="AudioStream" uid="uid://de6if7e257lb4" path="res://src/OpeningScene/Digital Watch Alarm Long.mp3" id="15_8e0t2"]
+[ext_resource type="Texture2D" uid="uid://bj8pdjjc1a6xf" path="res://src/OpeningScene/HenryPointing.png" id="17_s7j1o"]
+[ext_resource type="Texture2D" uid="uid://da657kq337264" path="res://src/OpeningScene/HenryWelp.png" id="18_i8dwv"]
 
 [sub_resource type="Animation" id="Animation_5qnxw"]
 length = 25.0
@@ -177,6 +180,18 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OpeningScene/Henry:texture")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_npopg")]
 }
 
 [sub_resource type="Animation" id="Animation_mlblw"]
@@ -380,6 +395,18 @@ tracks/14/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("OpeningScene/Henry:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 12.5851145, 18.072824),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_npopg"), ExtResource("17_s7j1o"), ExtResource("18_i8dwv")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4xbu1"]
 _data = {
@@ -459,6 +486,11 @@ texture_filter = 1
 position = Vector2(-428.80487, -295.50012)
 scale = Vector2(12.819344, 11.128867)
 texture = ExtResource("12_5jmxm")
+
+[node name="Henry" type="Sprite2D" parent="OpeningScene"]
+position = Vector2(781, 101)
+scale = Vector2(12.326614, 11.441405)
+texture = ExtResource("12_npopg")
 
 [node name="GreenScreen" type="Sprite2D" parent="OpeningScene"]
 modulate = Color(1, 1, 1, 0.2784314)
