@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=34 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="Script" uid="uid://bo4gm1152vhkh" path="res://src/lab.gd" id="1_fq8rk"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
 [ext_resource type="PackedScene" uid="uid://d20q7y361u17u" path="res://inventoryFunctionality/inventory_slot.tscn" id="17_1c3td"]
 [ext_resource type="PackedScene" uid="uid://dywb1e1j8cx08" path="res://inventoryFunctionality/labLevelInteractables/scanner.tscn" id="17_rh3ni"]
+[ext_resource type="AudioStream" uid="uid://blc634my7a4eq" path="res://assets/music/main_theme.mp3" id="18_1c3td"]
 [ext_resource type="Theme" uid="uid://bs8nkspm4dd87" path="res://inventoryFunctionality/inventoryPanel.tres" id="18_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
@@ -247,7 +248,7 @@ player = NodePath("../../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(1346.0001, 479)
-scale = Vector2(1.6, 1.6)
+scale = Vector2(2.1749554, 2.1749554)
 limit_left = 1
 limit_top = 1
 limit_right = 2562
@@ -315,7 +316,7 @@ scale = Vector2(1.6827717, 1.5191358)
 [node name="Player" parent="Node2D" instance=ExtResource("2_fadfy")]
 z_index = 4
 position = Vector2(1346.0001, 479)
-scale = Vector2(1.6000001, 1.6000001)
+scale = Vector2(2.1749554, 2.1749554)
 floor_constant_speed = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/Player"]
@@ -453,5 +454,9 @@ scale = Vector2(1.3930298, 1.3930298)
 [node name="Sparkle1" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(334, 144)
 scale = Vector2(1.5214661, 1.5214661)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_1c3td")
+autoplay = true
 
 [connection signal="notepadWasOpened" from="LockedComputerScreen" to="." method="_on_locked_computer_screen_notepad_was_opened"]

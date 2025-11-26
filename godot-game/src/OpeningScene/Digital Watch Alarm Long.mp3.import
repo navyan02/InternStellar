@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de6if7e257lb4"
+path="res://.godot/imported/Digital Watch Alarm Long.mp3-09def2b59f2ceb2dd42c51a5c9a8e370.mp3str"
+
+[deps]
+
+source_file="res://src/OpeningScene/Digital Watch Alarm Long.mp3"
+dest_files=["res://.godot/imported/Digital Watch Alarm Long.mp3-09def2b59f2ceb2dd42c51a5c9a8e370.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

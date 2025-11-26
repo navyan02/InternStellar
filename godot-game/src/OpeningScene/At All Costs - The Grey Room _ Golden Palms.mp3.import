@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lo02tdtqkv4c"
+path="res://.godot/imported/At All Costs - The Grey Room _ Golden Palms.mp3-6159e3d786eb21d17e7e5c08474937ea.mp3str"
+
+[deps]
+
+source_file="res://src/OpeningScene/At All Costs - The Grey Room _ Golden Palms.mp3"
+dest_files=["res://.godot/imported/At All Costs - The Grey Room _ Golden Palms.mp3-6159e3d786eb21d17e7e5c08474937ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
