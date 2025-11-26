@@ -3,6 +3,7 @@ extends CanvasLayer
 @export var passwordField : LineEdit
 @export var desktopNode : Node
 @export var loginScreen : Node
+@export var openNotepad : Node
 
 @onready var audioStreamPlayer : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -29,3 +30,11 @@ func _on_button_pressed() -> void:
 		audioStreamPlayer.stop()
 		audioStreamPlayer.stream = wrongSound
 		audioStreamPlayer.play()
+
+signal notepadWasOpened()
+
+func _on_notepad_pressed() -> void:
+	openNotepad.visible = true
+	
+	# Reveal the launch code
+	emit_signal("notepadWasOpened")
