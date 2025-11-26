@@ -10,7 +10,7 @@ func _ready():
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		_show_dialog('This is a diploma. It says "Dr. so and so went to KU and got a doctorate in Aerospace with a focus in extraterrestrial studies"... Weird.')
+		_show_dialog('This is a diploma. It says "Dr. Henry went to KU and got a doctorate in Aerospace with a focus in extraterrestrial studies"... Weird.')
 
 func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 	if dropped_item.item_id == "beakers":

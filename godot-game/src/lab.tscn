@@ -1,11 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=34 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
+[ext_resource type="Script" uid="uid://bo4gm1152vhkh" path="res://src/lab.gd" id="1_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="7_40yeu"]
 [ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
 [ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://o4xvooyp5pqq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
 [ext_resource type="PackedScene" uid="uid://b437fbqn5osq1" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://cdvo03bsmm6pb" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
 [ext_resource type="PackedScene" uid="uid://65ncto0qy15l" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
@@ -18,6 +20,8 @@
 [ext_resource type="Theme" uid="uid://bs8nkspm4dd87" path="res://inventoryFunctionality/inventoryPanel.tres" id="18_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
+[ext_resource type="FontFile" uid="uid://bywhyuf8rbomy" path="res://assets/fonts/madspixel/madspixel.ttf" id="20_yki8q"]
+[ext_resource type="PackedScene" uid="uid://cijrmqfmbxau4" path="res://src/sparkle.tscn" id="21_ftuwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udwgg"]
 size = Vector2(662.33105, 180.08633)
@@ -41,7 +45,157 @@ corner_radius_bottom_left = 10
 [sub_resource type="Theme" id="Theme_fq8rk"]
 Panel/styles/panel = SubResource("StyleBoxFlat_jq6c7")
 
-[node name="Node" type="Node"]
+[sub_resource type="Theme" id="Theme_yki8q"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 150
+Label/fonts/font = ExtResource("20_yki8q")
+
+[sub_resource type="Animation" id="Animation_yki8q"]
+resource_name = "Fade In"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparkles:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ftuwx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparkles:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rh3ni"]
+resource_name = "sparkles"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sparkles/Sparkle1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"playSparkle1"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparkles/Sparkle2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"playSparkle2"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparkles/Sparkle3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"playSparkle3"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sparkles:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftuwx"]
+_data = {
+&"Fade In": SubResource("Animation_yki8q"),
+&"RESET": SubResource("Animation_ftuwx"),
+&"sparkles": SubResource("Animation_rh3ni")
+}
+
+[node name="Node" type="Node" node_paths=PackedStringArray("youWinScreen")]
+script = ExtResource("1_fq8rk")
+youWinScreen = NodePath("You Win Screen")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(180, -7)
@@ -150,10 +304,11 @@ scale = Vector2(12.511354, 12.511354)
 position = Vector2(2208, 203)
 scale = Vector2(12.62462, 12.62462)
 
-[node name="Computer" parent="Node2D/Interactables" instance=ExtResource("15_ftuwx")]
+[node name="Computer" parent="Node2D/Interactables" node_paths=PackedStringArray("computerScreenNode") instance=ExtResource("15_ftuwx")]
 z_index = 2
 position = Vector2(1248.0001, 614)
 scale = Vector2(11.970797, 11.970797)
+computerScreenNode = NodePath("../../../LockedComputerScreen")
 
 [node name="Trash" parent="Node2D/Interactables" instance=ExtResource("15_rh3ni")]
 scale = Vector2(1.6827717, 1.5191358)
@@ -242,6 +397,66 @@ layout_mode = 2
 [node name="inventory_slot11" parent="CanvasLayer/Inventory/InventoryBarBackground/HBoxContainer" instance=ExtResource("17_1c3td")]
 layout_mode = 2
 
+[node name="LockedComputerScreen" parent="." instance=ExtResource("15_1c3td")]
+layer = 2
+visible = false
+
+[node name="You Win Screen" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="You Win Screen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="You Win Screen"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yki8q")
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="You Win Screen"]
+libraries = {
+&"": SubResource("AnimationLibrary_ftuwx")
+}
+
+[node name="Sparkles" type="Control" parent="You Win Screen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 57.0
+offset_right = -8.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sparkle3" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
+position = Vector2(773, 846)
+scale = Vector2(1.3024654, 1.3024654)
+
+[node name="Sparkle2" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
+position = Vector2(1642, 502)
+scale = Vector2(1.3930298, 1.3930298)
+
+[node name="Sparkle1" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
+position = Vector2(334, 144)
+scale = Vector2(1.5214661, 1.5214661)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1c3td")
 autoplay = true
+
+[connection signal="notepadWasOpened" from="LockedComputerScreen" to="." method="_on_locked_computer_screen_notepad_was_opened"]
