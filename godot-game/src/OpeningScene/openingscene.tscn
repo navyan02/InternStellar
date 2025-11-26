@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d2evldibjxv2l"]
+[gd_scene load_steps=29 format=3 uid="uid://d2evldibjxv2l"]
 
 [ext_resource type="Script" uid="uid://cylkxs4vbnjia" path="res://src/OpeningScene/openingscene.gd" id="1_5qnxw"]
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="2_rqt62"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c6v8kiw57gqy2" path="res://src/OpeningScene/DSYAY.png" id="8_1socx"]
 [ext_resource type="Texture2D" uid="uid://cjfducwxh8l6h" path="res://assets/rooms/computer.png" id="8_s7j1o"]
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="9_i8dwv"]
+[ext_resource type="Texture2D" uid="uid://ckhsyc7mwg5xx" path="res://src/OpeningScene/BlondeGirl1.png" id="9_ik1q6"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="10_1socx"]
 [ext_resource type="Texture2D" uid="uid://cq8yaxsspdip5" path="res://assets/rooms/trashcan.png" id="11_c85pf"]
 [ext_resource type="Texture2D" uid="uid://bmqg3gqhxkxch" path="res://assets/rooms/shelf.png" id="12_5jmxm"]
@@ -17,11 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://dvi66k3hpkvdw" path="res://src/OpeningScene/Henry1-1.png.png" id="12_npopg"]
 [ext_resource type="Texture2D" uid="uid://dqlvk5j0v6uji" path="res://src/OpeningScene/black screen.jpg" id="12_wrnp1"]
 [ext_resource type="AudioStream" uid="uid://lo02tdtqkv4c" path="res://src/OpeningScene/At All Costs - The Grey Room _ Golden Palms.mp3" id="14_1mnex"]
+[ext_resource type="Texture2D" uid="uid://7r25gb0qnbrq" path="res://src/OpeningScene/BGGuy.png" id="14_5jmxm"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_1mnex"]
 [ext_resource type="AudioStream" uid="uid://de6if7e257lb4" path="res://src/OpeningScene/Digital Watch Alarm Long.mp3" id="15_8e0t2"]
 [ext_resource type="Texture2D" uid="uid://bj8pdjjc1a6xf" path="res://src/OpeningScene/HenryPointing.png" id="17_s7j1o"]
 [ext_resource type="Texture2D" uid="uid://da657kq337264" path="res://src/OpeningScene/HenryWelp.png" id="18_i8dwv"]
 [ext_resource type="Texture2D" uid="uid://ciw4d8jw7qhml" path="res://src/OpeningScene/DSOHNO.png" id="20_c85pf"]
+[ext_resource type="Texture2D" uid="uid://b4axof75h2qfv" path="res://src/OpeningScene/BlondeGirl2.png" id="23_dvfkr"]
 
 [sub_resource type="Animation" id="Animation_5qnxw"]
 length = 25.0
@@ -206,6 +209,18 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("8_1socx")]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("OpeningScene/BlondeGirl:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_ik1q6")]
 }
 
 [sub_resource type="Animation" id="Animation_mlblw"]
@@ -433,6 +448,18 @@ tracks/16/keys = {
 "update": 1,
 "values": [ExtResource("8_1socx"), ExtResource("20_c85pf")]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("OpeningScene/BlondeGirl:texture")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 17.633333, 17.977787, 18.247786, 18.507786, 18.733334, 18.997786, 19.347786, 19.627787, 19.99565, 20.297787, 20.6, 21.017786, 21.49565, 21.887787, 22.300001, 22.82565, 23.300001, 23.765648, 24.233335, 24.555649, 24.900002, 25.266668, 25.566668, 25.900002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4xbu1"]
 _data = {
@@ -493,6 +520,11 @@ position = Vector2(-143, 105)
 scale = Vector2(11.140626, 10.609376)
 texture = ExtResource("8_1socx")
 
+[node name="BlondeGirl" type="Sprite2D" parent="OpeningScene"]
+position = Vector2(317, 15.000004)
+scale = Vector2(11.282258, 9.703126)
+texture = ExtResource("9_ik1q6")
+
 [node name="Desk" type="Sprite2D" parent="OpeningScene"]
 texture_filter = 1
 position = Vector2(-28.804749, 290.49976)
@@ -523,10 +555,15 @@ position = Vector2(781, 101)
 scale = Vector2(12.326614, 11.441405)
 texture = ExtResource("12_npopg")
 
+[node name="BGGuy" type="Sprite2D" parent="OpeningScene"]
+position = Vector2(-758, 134)
+scale = Vector2(12.975802, 11.749998)
+texture = ExtResource("14_5jmxm")
+
 [node name="GreenScreen" type="Sprite2D" parent="OpeningScene"]
 modulate = Color(1, 1, 1, 0.2784314)
 z_index = 3
-position = Vector2(65.00001, -1230)
+position = Vector2(61, -65)
 scale = Vector2(1.11875, 1.2166667)
 texture = ExtResource("12_613f1")
 
