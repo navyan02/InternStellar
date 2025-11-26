@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d2evldibjxv2l"]
+[gd_scene load_steps=31 format=3 uid="uid://d2evldibjxv2l"]
 
 [ext_resource type="Script" uid="uid://cylkxs4vbnjia" path="res://src/OpeningScene/openingscene.gd" id="1_5qnxw"]
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="2_rqt62"]
@@ -21,10 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://7r25gb0qnbrq" path="res://src/OpeningScene/BGGuy.png" id="14_5jmxm"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_1mnex"]
 [ext_resource type="AudioStream" uid="uid://de6if7e257lb4" path="res://src/OpeningScene/Digital Watch Alarm Long.mp3" id="15_8e0t2"]
+[ext_resource type="Texture2D" uid="uid://cttofbsywqpyd" path="res://src/OpeningScene/girl2Normal.png" id="16_wyetc"]
 [ext_resource type="Texture2D" uid="uid://bj8pdjjc1a6xf" path="res://src/OpeningScene/HenryPointing.png" id="17_s7j1o"]
 [ext_resource type="Texture2D" uid="uid://da657kq337264" path="res://src/OpeningScene/HenryWelp.png" id="18_i8dwv"]
 [ext_resource type="Texture2D" uid="uid://ciw4d8jw7qhml" path="res://src/OpeningScene/DSOHNO.png" id="20_c85pf"]
 [ext_resource type="Texture2D" uid="uid://b4axof75h2qfv" path="res://src/OpeningScene/BlondeGirl2.png" id="23_dvfkr"]
+[ext_resource type="Texture2D" uid="uid://daygd4fnimrnn" path="res://src/OpeningScene/girl2OhNo.png" id="25_umjtj"]
 
 [sub_resource type="Animation" id="Animation_5qnxw"]
 length = 25.0
@@ -221,6 +223,18 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("9_ik1q6")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("OpeningScene/BGGal:texture")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_wyetc")]
 }
 
 [sub_resource type="Animation" id="Animation_mlblw"]
@@ -460,6 +474,18 @@ tracks/17/keys = {
 "update": 1,
 "values": [ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6"), ExtResource("23_dvfkr"), ExtResource("9_ik1q6")]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("OpeningScene/BGGal:texture")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 18.056946),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("16_wyetc"), ExtResource("25_umjtj")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4xbu1"]
 _data = {
@@ -556,14 +582,20 @@ scale = Vector2(12.326614, 11.441405)
 texture = ExtResource("12_npopg")
 
 [node name="BGGuy" type="Sprite2D" parent="OpeningScene"]
-position = Vector2(-758, 134)
+position = Vector2(-791, 132)
 scale = Vector2(12.975802, 11.749998)
 texture = ExtResource("14_5jmxm")
+
+[node name="BGGal" type="Sprite2D" parent="OpeningScene"]
+z_index = 3
+position = Vector2(-447, 154)
+scale = Vector2(12.619141, 11.537109)
+texture = ExtResource("16_wyetc")
 
 [node name="GreenScreen" type="Sprite2D" parent="OpeningScene"]
 modulate = Color(1, 1, 1, 0.2784314)
 z_index = 3
-position = Vector2(61, -65)
+position = Vector2(64.50674, -1086.3357)
 scale = Vector2(1.11875, 1.2166667)
 texture = ExtResource("12_613f1")
 
@@ -587,7 +619,7 @@ volume_db = -19.467
 
 [node name="alarm" type="AudioStreamPlayer" parent="OpeningScene"]
 stream = ExtResource("15_8e0t2")
-volume_db = 8.988
+volume_db = 24.0
 
 [node name="Camera2D" type="Camera2D" parent="OpeningScene"]
 z_index = 3
