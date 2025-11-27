@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=36 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="Script" uid="uid://bo4gm1152vhkh" path="res://src/lab.gd" id="1_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="7_40yeu"]
-[ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
+[ext_resource type="Script" uid="uid://d1mg2o8lg6prx" path="res://src/drawers.gd" id="8_mlblw"]
+[ext_resource type="Texture2D" uid="uid://itavjhu6ntgv" path="res://assets/rooms/drawers.png" id="9_4xbu1"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
 [ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://o4xvooyp5pqq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
@@ -26,23 +27,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udwgg"]
 size = Vector2(662.33105, 180.08633)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic0bi"]
-size = Vector2(356.94965, 66.93161)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0omo"]
 size = Vector2(787.25, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eetg4"]
 size = Vector2(1723.5, 39)
 
-[sub_resource type="GDScript" id="GDScript_rh3ni"]
-script/source = "extends StaticBody2D
-@export var largeBookShelf: Node
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic0bi"]
+size = Vector2(356.94965, 66.93161)
 
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		largeBookShelf.visible = true		
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huwru"]
+size = Vector2(5.038796, 14.821657)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq6c7"]
 bg_color = Color(0.028657842, 0.22389153, 0.31482244, 0.6156863)
@@ -233,28 +228,6 @@ position = Vector2(497.5423, 466.91263)
 scale = Vector2(8.194444, 6.129598)
 texture = ExtResource("7_40yeu")
 
-[node name="Desk" type="StaticBody2D" parent="Node2D"]
-z_index = 2
-position = Vector2(679, 532)
-scale = Vector2(8.111116, 8.111115)
-
-[node name="Block desk" type="CollisionShape2D" parent="Node2D/Desk"]
-z_index = 1
-position = Vector2(0.36494446, -0.37313843)
-scale = Vector2(0.30198923, 0.30198926)
-shape = SubResource("RectangleShape2D_ic0bi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Desk"]
-texture_filter = 1
-scale = Vector2(1.0000001, 1.0000001)
-texture = ExtResource("9_f0omo")
-
-[node name="InteractArea" parent="Node2D/Desk/Sprite2D" node_paths=PackedStringArray("player") instance=ExtResource("8_ic0bi")]
-position = Vector2(32.484467, -1.7033119)
-scale = Vector2(-0.55689615, 0.5608738)
-userDialog = "The drawers are locked..."
-player = NodePath("../../../Player")
-
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(1346.0001, 479)
 scale = Vector2(2.1749554, 2.1749554)
@@ -288,10 +261,41 @@ shape = SubResource("RectangleShape2D_f0omo")
 
 [node name="Interactables" type="Node" parent="Node2D"]
 
+[node name="Desk" type="StaticBody2D" parent="Node2D/Interactables"]
+z_index = 2
+position = Vector2(1240.378, 823.81165)
+scale = Vector2(12.666935, 12.666935)
+
+[node name="Block desk" type="CollisionShape2D" parent="Node2D/Interactables/Desk"]
+z_index = 1
+position = Vector2(0.36494446, -0.37313843)
+scale = Vector2(0.30198923, 0.30198926)
+shape = SubResource("RectangleShape2D_ic0bi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Interactables/Desk"]
+texture_filter = 1
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("9_f0omo")
+
+[node name="Drawers" type="Area2D" parent="Node2D/Interactables/Desk"]
+position = Vector2(-97.92251, -65.036385)
+scale = Vector2(0.0789457, 0.0789457)
+script = ExtResource("8_mlblw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Interactables/Desk/Drawers"]
+position = Vector2(1656.5002, 803)
+rotation = -3.1415925
+scale = Vector2(97.04695, -15.517834)
+shape = SubResource("RectangleShape2D_huwru")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Interactables/Desk/Drawers"]
+position = Vector2(1663, 806.00006)
+scale = Vector2(12.699721, 12.699721)
+texture = ExtResource("9_4xbu1")
+
 [node name="Bookshelf" parent="Node2D/Interactables" instance=ExtResource("10_fq8rk")]
 position = Vector2(181, -1)
 scale = Vector2(1.56705, 1.56705)
-script = SubResource("GDScript_rh3ni")
 
 [node name="Scanner" parent="Node2D/Interactables" instance=ExtResource("17_rh3ni")]
 position = Vector2(2392.0002, 572)
