@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://c1fpkhumbk1md" path="res://assets/Office/bean.png" id="7_ynrh5"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="9_vfgj6"]
 [ext_resource type="PackedScene" uid="uid://t4x28uy2bxb3" path="res://src/npc1.tscn" id="10_3xwue"]
-[ext_resource type="Script" uid="uid://d1yju2kryg6rn" path="res://src/npc_2.gd" id="10_iqa1n"]
+[ext_resource type="Script" path="res://src/npc_2.gd" id="10_iqa1n"]
 [ext_resource type="Texture2D" uid="uid://behedroswwo6q" path="res://assets/Office/NPC2.png" id="11_cdbuu"]
+[ext_resource type="Script" uid="uid://bedjn8o15neni" path="res://src/npc_3.gd" id="12_1v5ov"]
 [ext_resource type="Texture2D" uid="uid://cuu5uxn0by77k" path="res://assets/characters/boy2.png" id="12_ynrh5"]
-[ext_resource type="Script" uid="uid://4u0x5rnu5nk8" path="res://npc_3.gd" id="13_1v5ov"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1v5ov"]
 load_path = "res://.godot/imported/TV backgroud.png-bc3d42353a049bf50308cd1790ed3a9b.ctex"
@@ -29,7 +29,7 @@ position = Vector2(918, 416)
 scale = Vector2(0.12406171, 0.12406171)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(483.63028, 1055.9263)
+position = Vector2(564.23535, 1547.617)
 scale = Vector2(38.791695, 42.2378)
 texture = ExtResource("1_ujhis")
 
@@ -91,6 +91,8 @@ scale = Vector2(62.11986, 58.53094)
 script = ExtResource("10_iqa1n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2"]
+position = Vector2(-3441.8357, 1724.948)
+scale = Vector2(109.89828, 128.49216)
 shape = SubResource("CapsuleShape2D_ynrh5")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC2"]
@@ -100,15 +102,14 @@ texture = ExtResource("11_cdbuu")
 
 [node name="NPC3" type="Area2D" parent="."]
 position = Vector2(572.2958, 56.423527)
+script = ExtResource("12_1v5ov")
+
+[node name="Boy2" type="Sprite2D" parent="NPC3"]
+position = Vector2(6319.435, 3038.81)
+scale = Vector2(57.36718, 61.3354)
+texture = ExtResource("12_ynrh5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3"]
+position = Vector2(6327.4956, 3079.1128)
+scale = Vector2(98.36434, 117.47107)
 shape = SubResource("CapsuleShape2D_upguj")
-
-[node name="Sprite2D" type="Sprite2D" parent="NPC3"]
-texture = ExtResource("12_ynrh5")
-
-[node name="Boy2" type="Sprite2D" parent="."]
-position = Vector2(6891.7314, 3095.2336)
-scale = Vector2(57.367184, 61.335407)
-texture = ExtResource("12_ynrh5")
-script = ExtResource("13_1v5ov")
