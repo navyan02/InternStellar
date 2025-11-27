@@ -5,7 +5,7 @@ extends Area2D
 class_name BookPuzzle
 
 @export var bookshelf_puzzle_ui: CanvasLayer
-
+var hasInteracted = false
 
 func _ready():
 	input_event.connect(_on_input_event)
@@ -16,11 +16,12 @@ func _ready():
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if bookshelf_puzzle_ui:
-			bookshelf_puzzle_ui.visible = true
-		else:
+		if not hasInteracted:
 			_show_dialog("This shelf is kind of disorganized")
-
+			hasInteracted = true
+		else:
+			bookshelf_puzzle_ui.visible = true
+			
 func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 	if dropped_item.item_id == "beakers":
 		_show_dialog("Whoops! Almost spilled the chemicals on the books!")
@@ -39,6 +40,3 @@ func _on_bookshelf_puzzle_solved() -> void:
 	# This runs when the big bookshelf puzzle is solved
 	print("BookPuzzle: received puzzle_solved signal")
 	_show_dialog("The books slide into perfect order. A hidden compartment opens and a small key drops out!")
-	# var inv = get_tree().get_first_node_in_group("inventory")
-	# if inv:
-	# 	inv.add_item("bookshelf_key")

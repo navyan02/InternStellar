@@ -14,13 +14,16 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 
 func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 	print("*Scanner*: Something just dropped on me")
-	if dropped_item.item_id == "beakers":
-		$AnimationPlayer.play("scanUp")
-		$AudioStreamPlayer2D.play(4.5)
-		await $AnimationPlayer.animation_finished
-		$AudioStreamPlayer2D.stop()
+	$AnimationPlayer.play("scanUp")
+	$AudioStreamPlayer2D.play(4.5)
+	await $AnimationPlayer.animation_finished
+	$AudioStreamPlayer2D.stop()
+	
+	if dropped_item.item_id == "beakers":		
 		_show_dialog("99% uninvisible ink detected.", 4.0)
 		# Item returns to inventory (don't remove it)
+	elif dropped_item.item_id == "key":
+		_show_dialog("Gold detected.", 4.0)
 	else:
 		_show_dialog("The scanner shows no unusual properties.", 5.0)
 

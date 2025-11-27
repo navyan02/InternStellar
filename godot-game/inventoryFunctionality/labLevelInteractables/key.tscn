@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlcvjy86djdq5"]
+
+[ext_resource type="Script" uid="uid://cukjbhv3kk2ud" path="res://inventoryFunctionality/labLevelInteractables/key.gd" id="1_sbtio"]
+[ext_resource type="Resource" uid="uid://dg0fa6dc3th2" path="res://inventoryFunctionality/labLevelInteractables/key.tres" id="2_eb5wt"]
+[ext_resource type="Texture2D" uid="uid://dpcc2ay0j6lr1" path="res://assets/inventoryItems/keyIcon.png" id="2_qcb5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb5wt"]
+size = Vector2(21.66804, 12.127041)
+
+[node name="Key" type="Area2D"]
+script = ExtResource("1_sbtio")
+item_data = ExtResource("2_eb5wt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_qcb5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.435275e-07, 0)
+scale = Vector2(0.63337225, 2.6572156)
+shape = SubResource("RectangleShape2D_eb5wt")

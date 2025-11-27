@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="7_40yeu"]
 [ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
-[ext_resource type="PackedScene" uid="uid://dy707wf1mqd1u" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://o4xvooyp5pqq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
-[ext_resource type="PackedScene" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
-[ext_resource type="PackedScene" uid="uid://wguqht4ab66w" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
-[ext_resource type="PackedScene" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
+[ext_resource type="PackedScene" uid="uid://b437fbqn5osq1" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://cdvo03bsmm6pb" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
+[ext_resource type="PackedScene" uid="uid://65ncto0qy15l" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_yki8q"]
 [ext_resource type="Script" uid="uid://d0mk3dc5bl31j" path="res://inventoryFunctionality/inventory_system.gd" id="16_agfmk"]
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
 [ext_resource type="FontFile" uid="uid://bywhyuf8rbomy" path="res://assets/fonts/madspixel/madspixel.ttf" id="20_yki8q"]
-[ext_resource type="PackedScene" path="res://src/sparkle.tscn" id="21_ftuwx"]
+[ext_resource type="PackedScene" uid="uid://cijrmqfmbxau4" path="res://src/sparkle.tscn" id="21_ftuwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udwgg"]
 size = Vector2(662.33105, 180.08633)
@@ -39,22 +39,9 @@ size = Vector2(1723.5, 39)
 script/source = "extends StaticBody2D
 @export var largeBookShelf: Node
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		largeBookShelf.visible = true
-		print(\"hi\")
-		
+		largeBookShelf.visible = true		
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq6c7"]

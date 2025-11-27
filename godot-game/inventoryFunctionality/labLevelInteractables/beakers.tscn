@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ovtcflkeusfe" path="res://assets/rooms/beakers.png" id="3_chekm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu0gq"]
-size = Vector2(18.0567, 6.063521)
+size = Vector2(21.66804, 12.127041)
 
 [node name="Beakers" type="Area2D"]
 scale = Vector2(0.43376905, 0.43376905)
@@ -17,6 +17,6 @@ texture_filter = 1
 texture = ExtResource("3_chekm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.435275e-07, 1.1526868)
+position = Vector2(-3.435275e-07, 0)
 scale = Vector2(1.2767417, 1.1406118)
 shape = SubResource("RectangleShape2D_yu0gq")

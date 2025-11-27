@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dg0fa6dc3th2"]
+
+[ext_resource type="Script" uid="uid://c8mhqbeib7aj4" path="res://inventoryFunctionality/item_data.gd" id="1_8wjam"]
+[ext_resource type="Texture2D" uid="uid://dpcc2ay0j6lr1" path="res://assets/inventoryItems/keyIcon.png" id="1_kihum"]
+
+[resource]
+script = ExtResource("1_8wjam")
+item_id = "key"
+item_name = "Key"
+icon = ExtResource("1_kihum")
+pickup_dialog = "I wonder where I can use this"
+metadata/_custom_type_script = "uid://c8mhqbeib7aj4"
