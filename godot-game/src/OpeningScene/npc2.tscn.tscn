@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf7hhnjnq52nm"]
+
+[ext_resource type="Texture2D" uid="uid://behedroswwo6q" path="res://assets/Office/NPC2.png" id="1_f8qvo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_luhqa"]
+
+[node name="Npc2_tscn" type="Node2D"]
+
+[node name="Npc2" type="Sprite2D" parent="."]
+position = Vector2(980, 469)
+texture = ExtResource("1_f8qvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_luhqa")

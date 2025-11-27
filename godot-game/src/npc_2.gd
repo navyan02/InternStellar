@@ -2,7 +2,7 @@
 # NPC 1
 # ============================================
 extends Area2D
-class_name npc1
+class_name npc2
 
 func _ready():
 	input_event.connect(_on_input_event)
@@ -10,7 +10,7 @@ func _ready():
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		_show_dialog("You must be the new intern! Welcome! Your team is great!")
+		_show_dialog("Hi Intern! Your team should be in their lab. They must be working on something crazy! Loud noises were coming from their lab this morning!")
 
 func _show_dialog(text: String):
 	var dialog = get_tree().get_first_node_in_group("dialog")

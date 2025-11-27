@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ax3je1a5inw"]
+
+[ext_resource type="Texture2D" uid="uid://behedroswwo6q" path="res://assets/Office/NPC2.png" id="1_4x7gv"]
+
+[node name="Npc2" type="Node2D"]
+
+[node name="Npc2" type="Sprite2D" parent="."]
+position = Vector2(1144, 625)
+texture = ExtResource("1_4x7gv")
