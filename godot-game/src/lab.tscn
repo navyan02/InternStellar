@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=35 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="Script" uid="uid://bo4gm1152vhkh" path="res://src/lab.gd" id="1_fq8rk"]
@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="7_40yeu"]
 [ext_resource type="PackedScene" uid="uid://c2ov45ll3r7n0" path="res://src/interact.tscn" id="8_ic0bi"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
-[ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://dy707wf1mqd1u" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://o4xvooyp5pqq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
-[ext_resource type="PackedScene" uid="uid://b437fbqn5osq1" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
-[ext_resource type="PackedScene" uid="uid://cdvo03bsmm6pb" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
-[ext_resource type="PackedScene" uid="uid://65ncto0qy15l" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
+[ext_resource type="PackedScene" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
+[ext_resource type="PackedScene" uid="uid://wguqht4ab66w" path="res://inventoryFunctionality/labLevelInteractables/computer.tscn" id="15_ftuwx"]
+[ext_resource type="PackedScene" path="res://inventoryFunctionality/labLevelInteractables/trash.tscn" id="15_rh3ni"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="15_yki8q"]
 [ext_resource type="Script" uid="uid://d0mk3dc5bl31j" path="res://inventoryFunctionality/inventory_system.gd" id="16_agfmk"]
 [ext_resource type="PackedScene" uid="uid://1ue7qfecucme" path="res://inventoryFunctionality/labLevelInteractables/beakers.tscn" id="16_ftuwx"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bb35sl6mr5dca" path="res://inventoryFunctionality/labLevelInteractables/shelf.tscn" id="18_huwru"]
 [ext_resource type="PackedScene" uid="uid://cxcu67n3jlwte" path="res://inventoryFunctionality/labLevelInteractables/whiteboard.tscn" id="19_mmc43"]
 [ext_resource type="FontFile" uid="uid://bywhyuf8rbomy" path="res://assets/fonts/madspixel/madspixel.ttf" id="20_yki8q"]
-[ext_resource type="PackedScene" uid="uid://cijrmqfmbxau4" path="res://src/sparkle.tscn" id="21_ftuwx"]
+[ext_resource type="PackedScene" path="res://src/sparkle.tscn" id="21_ftuwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udwgg"]
 size = Vector2(662.33105, 180.08633)
@@ -34,6 +34,28 @@ size = Vector2(787.25, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eetg4"]
 size = Vector2(1723.5, 39)
+
+[sub_resource type="GDScript" id="GDScript_rh3ni"]
+script/source = "extends StaticBody2D
+@export var largeBookShelf: Node
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		largeBookShelf.visible = true
+		print(\"hi\")
+		
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq6c7"]
 bg_color = Color(0.028657842, 0.22389153, 0.31482244, 0.6156863)
@@ -220,8 +242,8 @@ shape = SubResource("RectangleShape2D_udwgg")
 
 [node name="Chair" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(613.5, 420.58334)
-scale = Vector2(8.194444, 8.194445)
+position = Vector2(497.5423, 466.91263)
+scale = Vector2(8.194444, 6.129598)
 texture = ExtResource("7_40yeu")
 
 [node name="Desk" type="StaticBody2D" parent="Node2D"]
@@ -282,6 +304,7 @@ shape = SubResource("RectangleShape2D_f0omo")
 [node name="Bookshelf" parent="Node2D/Interactables" instance=ExtResource("10_fq8rk")]
 position = Vector2(181, -1)
 scale = Vector2(1.56705, 1.56705)
+script = SubResource("GDScript_rh3ni")
 
 [node name="Scanner" parent="Node2D/Interactables" instance=ExtResource("17_rh3ni")]
 position = Vector2(2392.0002, 572)
@@ -304,11 +327,10 @@ scale = Vector2(12.511354, 12.511354)
 position = Vector2(2208, 203)
 scale = Vector2(12.62462, 12.62462)
 
-[node name="Computer" parent="Node2D/Interactables" node_paths=PackedStringArray("computerScreenNode") instance=ExtResource("15_ftuwx")]
+[node name="Computer" parent="Node2D/Interactables" instance=ExtResource("15_ftuwx")]
 z_index = 2
 position = Vector2(1248.0001, 614)
 scale = Vector2(11.970797, 11.970797)
-computerScreenNode = NodePath("../../../LockedComputerScreen")
 
 [node name="Trash" parent="Node2D/Interactables" instance=ExtResource("15_rh3ni")]
 scale = Vector2(1.6827717, 1.5191358)
@@ -446,17 +468,21 @@ grow_vertical = 2
 [node name="Sparkle3" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(773, 846)
 scale = Vector2(1.3024654, 1.3024654)
+texture = null
 
 [node name="Sparkle2" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(1642, 502)
 scale = Vector2(1.3930298, 1.3930298)
+texture = null
 
 [node name="Sparkle1" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(334, 144)
 scale = Vector2(1.5214661, 1.5214661)
+texture = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1c3td")
 autoplay = true
 
+[connection signal="input_event" from="Node2D/Interactables/Bookshelf" to="Node2D/Interactables/Bookshelf" method="_on_input_event"]
 [connection signal="notepadWasOpened" from="LockedComputerScreen" to="." method="_on_locked_computer_screen_notepad_was_opened"]
