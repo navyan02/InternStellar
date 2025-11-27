@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jmwttottf74j"]
+[gd_scene load_steps=18 format=3 uid="uid://jmwttottf74j"]
 
 [ext_resource type="Texture2D" uid="uid://wrthydkx10mc" path="res://assets/Office/OfficeBackground.png" id="1_ujhis"]
 [ext_resource type="Texture2D" uid="uid://dn4xj27xsnsba" path="res://assets/Office/coffeepot.png" id="2_hye3w"]
@@ -7,9 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://tf4a6uh8xfxh" path="res://assets/Office/TV.png" id="5_iqa1n"]
 [ext_resource type="Texture2D" uid="uid://du3mydbh8ev0q" path="res://assets/Office/TV backgroud.png" id="6_cdbuu"]
 [ext_resource type="Texture2D" uid="uid://c1fpkhumbk1md" path="res://assets/Office/bean.png" id="7_ynrh5"]
-[ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="8_hye3w"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="9_vfgj6"]
 [ext_resource type="PackedScene" uid="uid://t4x28uy2bxb3" path="res://src/npc1.tscn" id="10_3xwue"]
+[ext_resource type="Script" path="res://src/npc_2.gd" id="10_iqa1n"]
+[ext_resource type="Texture2D" uid="uid://behedroswwo6q" path="res://assets/Office/NPC2.png" id="11_cdbuu"]
+[ext_resource type="Script" uid="uid://bedjn8o15neni" path="res://src/npc_3.gd" id="12_1v5ov"]
+[ext_resource type="Texture2D" uid="uid://cuu5uxn0by77k" path="res://assets/characters/boy2.png" id="12_ynrh5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1v5ov"]
 load_path = "res://.godot/imported/TV backgroud.png-bc3d42353a049bf50308cd1790ed3a9b.ctex"
@@ -17,27 +20,31 @@ load_path = "res://.godot/imported/TV backgroud.png-bc3d42353a049bf50308cd1790ed
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hye3w"]
 size = Vector2(1095.5133, 196.90771)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ynrh5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upguj"]
+
 [node name="Office" type="Node2D"]
 position = Vector2(918, 416)
 scale = Vector2(0.12406171, 0.12406171)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(455.71863, 1057.0308)
+position = Vector2(564.23535, 1547.617)
 scale = Vector2(38.791695, 42.2378)
 texture = ExtResource("1_ujhis")
 
 [node name="Coffeepot" type="Sprite2D" parent="."]
-position = Vector2(3820.6797, 1676.585)
+position = Vector2(5094.2397, 1660.464)
 scale = Vector2(9.0004225, 9.702164)
 texture = ExtResource("2_hye3w")
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(-1361.6064, 3002.308)
+position = Vector2(-298.23877, 2974.3267)
 scale = Vector2(12.463254, 9.313266)
 texture = ExtResource("3_vfgj6")
 
 [node name="Flower" type="Sprite2D" parent="."]
-position = Vector2(-1329.9835, 1370.2859)
+position = Vector2(-153.14978, 1249.3783)
 scale = Vector2(3.3365388, 2.7201924)
 texture = ExtResource("4_3xwue")
 
@@ -57,21 +64,18 @@ scale = Vector2(20.614584, 19.564516)
 texture = ExtResource("6_cdbuu")
 
 [node name="Bean" type="Sprite2D" parent="."]
-position = Vector2(6599, 3997.9995)
+position = Vector2(6706.3403, 4038.313)
 scale = Vector2(5.8670783, 6.184049)
 texture = ExtResource("7_ynrh5")
-
-[node name="Player (CharacterBody2D)" parent="." instance=ExtResource("8_hye3w")]
-position = Vector2(-5714.897, 2192.4573)
-scale = Vector2(19.9778, 19.9778)
 
 [node name="BlockPlayerMovement" type="StaticBody2D" parent="."]
 show_behind_parent = true
 z_index = 1
-position = Vector2(-5577.5664, 2192.4573)
+position = Vector2(-6142.1045, 2950.1445)
 scale = Vector2(5.7409835, 5.7409835)
 
 [node name="Block wall" type="CollisionShape2D" parent="BlockPlayerMovement"]
+visible = false
 z_index = 1
 position = Vector2(1047.352, -444.37482)
 scale = Vector2(2.5017161, 5.269356)
@@ -80,5 +84,32 @@ shape = SubResource("RectangleShape2D_hye3w")
 [node name="Dialog System" parent="." instance=ExtResource("9_vfgj6")]
 
 [node name="NPC1" parent="." instance=ExtResource("10_3xwue")]
-position = Vector2(1644.3427, 1733.0085)
+position = Vector2(2877.5999, 1757.1901)
 scale = Vector2(62.11986, 58.53094)
+
+[node name="NPC2" type="Area2D" parent="."]
+script = ExtResource("10_iqa1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2"]
+position = Vector2(-3441.8357, 1724.948)
+scale = Vector2(109.89828, 128.49216)
+shape = SubResource("CapsuleShape2D_ynrh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC2"]
+position = Vector2(-3462.7485, 1741.0691)
+scale = Vector2(5.3160157, 4.551794)
+texture = ExtResource("11_cdbuu")
+
+[node name="NPC3" type="Area2D" parent="."]
+position = Vector2(572.2958, 56.423527)
+script = ExtResource("12_1v5ov")
+
+[node name="Boy2" type="Sprite2D" parent="NPC3"]
+position = Vector2(6319.435, 3038.81)
+scale = Vector2(57.36718, 61.3354)
+texture = ExtResource("12_ynrh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3"]
+position = Vector2(6327.4956, 3079.1128)
+scale = Vector2(98.36434, 117.47107)
+shape = SubResource("CapsuleShape2D_upguj")
