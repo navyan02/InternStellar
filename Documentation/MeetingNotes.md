@@ -1,4 +1,26 @@
+## **Meeting Title:** Team Meeting
+### **Date:** Wednesday, November 26th, 2025
+---
+#### 👥 Attendees
 
+- Katie Nordberg, Vivian Lara, Christina Sorensen, Kundana Dongala, Navya Nittala
+
+### 📒 Notes
+- Christina: majority of opening scene is finished, intern waking up may not be completed during this semester.
+- Katie: changing of the scenes (press play --> title screen, start --> opening scene, etc.), computer puzzle works, after the computer puzzle is done the game is over. all changes have been merged into main (fixed all merge conflicts). edited volume for the background music
+- Vi: made the character walking and idle frames, leveled out the music and added it to all the scenes,
+- Kundana: office scene is done (two characters are interacting with the intern), needs to add security guard
+- Navya: working on the bookshelf puzzle (clicking to swap books), needs to configure with rest of the interactables
+
+- [ ] start on the video
+      - include short description from architecture, play cut scene, demo run through of the game (katie to screen record)
+- [ ] create script with time stamps from the screen recording
+- [ ] include lables for each section of the video
+- complete game elements by Friday
+- run through video Saturday
+- script drafted by Sunday Morning 
+
+---
 ## **Meeting Title:** TA Meeting
 ### **Date:** Thursday, November 20th, 2025
 ---
