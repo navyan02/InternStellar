@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5qjli8qq7rvh"]
+[gd_scene load_steps=9 format=3 uid="uid://b5qjli8qq7rvh"]
 
 [ext_resource type="Texture2D" uid="uid://c7mnngtoltt14" path="res://assets/rooms/bookshelf.png" id="1_ygs4r"]
 [ext_resource type="Script" uid="uid://b06clcct5hay6" path="res://inventoryFunctionality/labLevelInteractables/bookPuzzle.gd" id="2_etvms"]
 [ext_resource type="Texture2D" uid="uid://rmt2efj3jrjp" path="res://assets/rooms/bookPuzzle.png" id="3_8m1rk"]
 [ext_resource type="PackedScene" uid="uid://dlcvjy86djdq5" path="res://inventoryFunctionality/labLevelInteractables/key.tscn" id="4_8m1rk"]
 [ext_resource type="PackedScene" uid="uid://7qva5twctx01" path="res://src/largeBookShelf.tscn" id="4_etvms"]
+[ext_resource type="AudioStream" uid="uid://brb7by7icwcw6" path="res://assets/soundEffects/pen-click.mp3" id="6_nfqto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfqto"]
 size = Vector2(25.532238, 11.928995)
@@ -49,5 +50,9 @@ monitorable = false
 
 [node name="LargeBookShelf" parent="." instance=ExtResource("4_etvms")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_nfqto")
+volume_db = 24.0
 
 [connection signal="puzzle_solved" from="LargeBookShelf" to="Bookshelf/Key" method="_on_large_book_shelf_puzzle_solved"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=36 format=3 uid="uid://s4mcjpxlgk0u"]
+[gd_scene load_steps=38 format=3 uid="uid://s4mcjpxlgk0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddqfhwa8xxth5" path="res://assets/rooms/labBackground.png" id="1_eohh7"]
 [ext_resource type="Script" uid="uid://bo4gm1152vhkh" path="res://src/lab.gd" id="1_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://dpux7mjnmklvb" path="res://src/player.tscn" id="2_fadfy"]
 [ext_resource type="Texture2D" uid="uid://cxux1mpl50qb4" path="res://assets/rooms/chair.png" id="7_40yeu"]
 [ext_resource type="Script" uid="uid://d1mg2o8lg6prx" path="res://src/drawers.gd" id="8_mlblw"]
+[ext_resource type="AudioStream" uid="uid://bxufk80rv5ckw" path="res://assets/soundEffects/completedPuzzle.mp3" id="8_mmc43"]
 [ext_resource type="Texture2D" uid="uid://itavjhu6ntgv" path="res://assets/rooms/drawers.png" id="9_4xbu1"]
 [ext_resource type="Texture2D" uid="uid://b0m7xaom4qmef" path="res://assets/rooms/desk.png" id="9_f0omo"]
+[ext_resource type="Texture2D" uid="uid://cnwibbveqggau" path="res://assets/rooms/openDrawer.png" id="9_mlblw"]
 [ext_resource type="PackedScene" uid="uid://b5qjli8qq7rvh" path="res://inventoryFunctionality/labLevelInteractables/bookshelf.tscn" id="10_fq8rk"]
 [ext_resource type="PackedScene" uid="uid://o4xvooyp5pqq" path="res://src/largeComputerScreen.tscn" id="15_1c3td"]
 [ext_resource type="PackedScene" uid="uid://b437fbqn5osq1" path="res://inventoryFunctionality/labLevelInteractables/Diploma.tscn" id="15_fq8rk"]
@@ -277,10 +279,12 @@ texture_filter = 1
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("9_f0omo")
 
-[node name="Drawers" type="Area2D" parent="Node2D/Interactables/Desk"]
+[node name="Drawers" type="Area2D" parent="Node2D/Interactables/Desk" node_paths=PackedStringArray("closedDrawer", "openDrawer")]
 position = Vector2(-97.92251, -65.036385)
 scale = Vector2(0.0789457, 0.0789457)
 script = ExtResource("8_mlblw")
+closedDrawer = NodePath("ClosedDrawer")
+openDrawer = NodePath("OpenDrawer")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Interactables/Desk/Drawers"]
 position = Vector2(1656.5002, 803)
@@ -288,10 +292,19 @@ rotation = -3.1415925
 scale = Vector2(97.04695, -15.517834)
 shape = SubResource("RectangleShape2D_huwru")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Interactables/Desk/Drawers"]
-position = Vector2(1663, 806.00006)
+[node name="ClosedDrawer" type="Sprite2D" parent="Node2D/Interactables/Desk/Drawers"]
+position = Vector2(1657, 806)
 scale = Vector2(12.699721, 12.699721)
 texture = ExtResource("9_4xbu1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Interactables/Desk/Drawers"]
+stream = ExtResource("8_mmc43")
+
+[node name="OpenDrawer" type="Sprite2D" parent="Node2D/Interactables/Desk/Drawers"]
+visible = false
+position = Vector2(1690.0001, 837)
+scale = Vector2(12.756703, 12.756703)
+texture = ExtResource("9_mlblw")
 
 [node name="Bookshelf" parent="Node2D/Interactables" instance=ExtResource("10_fq8rk")]
 position = Vector2(181, -1)
@@ -318,10 +331,11 @@ scale = Vector2(12.511354, 12.511354)
 position = Vector2(2208, 203)
 scale = Vector2(12.62462, 12.62462)
 
-[node name="Computer" parent="Node2D/Interactables" instance=ExtResource("15_ftuwx")]
+[node name="Computer" parent="Node2D/Interactables" node_paths=PackedStringArray("computerScreenNode") instance=ExtResource("15_ftuwx")]
 z_index = 2
 position = Vector2(1248.0001, 614)
 scale = Vector2(11.970797, 11.970797)
+computerScreenNode = NodePath("../../../LockedComputerScreen")
 
 [node name="Trash" parent="Node2D/Interactables" instance=ExtResource("15_rh3ni")]
 scale = Vector2(1.6827717, 1.5191358)
@@ -459,17 +473,14 @@ grow_vertical = 2
 [node name="Sparkle3" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(773, 846)
 scale = Vector2(1.3024654, 1.3024654)
-texture = null
 
 [node name="Sparkle2" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(1642, 502)
 scale = Vector2(1.3930298, 1.3930298)
-texture = null
 
 [node name="Sparkle1" parent="You Win Screen/Sparkles" instance=ExtResource("21_ftuwx")]
 position = Vector2(334, 144)
 scale = Vector2(1.5214661, 1.5214661)
-texture = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1c3td")

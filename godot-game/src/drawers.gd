@@ -4,6 +4,9 @@
 extends Area2D
 class_name DeskDrawers
 
+@export var closedDrawer: Node
+@export var openDrawer: Node
+
 var unlocked = false
 
 func _ready():
@@ -27,6 +30,10 @@ func handle_item_drop(dropped_item: ItemData, inventory: InventorySystem):
 		_show_dialog("It unlocked!", 4.0)
 		inventory.remove_item(dropped_item)
 		unlocked = true
+		if $AudioStreamPlayer2D != null:
+			$AudioStreamPlayer2D.play()
+		openDrawer.visible = true
+		closedDrawer.visible = false
 	else:
 		_show_dialog("It's locked", 5.0)
 
