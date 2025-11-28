@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c1fpkhumbk1md" path="res://assets/Office/bean.png" id="7_ynrh5"]
 [ext_resource type="PackedScene" uid="uid://daegyiygjpfmj" path="res://inventoryFunctionality/dialog_system.tscn" id="9_vfgj6"]
 [ext_resource type="PackedScene" uid="uid://t4x28uy2bxb3" path="res://src/npc1.tscn" id="10_3xwue"]
-[ext_resource type="Script" path="res://src/npc_2.gd" id="10_iqa1n"]
-[ext_resource type="Texture2D" uid="uid://behedroswwo6q" path="res://assets/Office/NPC2.png" id="11_cdbuu"]
+[ext_resource type="Script" uid="uid://d1yju2kryg6rn" path="res://src/npc_2.gd" id="10_iqa1n"]
+[ext_resource type="Texture2D" uid="uid://bufxqmj7igntc" path="res://assets/characters/girl2.png" id="11_ynrh5"]
 [ext_resource type="Script" uid="uid://bedjn8o15neni" path="res://src/npc_3.gd" id="12_1v5ov"]
 [ext_resource type="Texture2D" uid="uid://cuu5uxn0by77k" path="res://assets/characters/boy2.png" id="12_ynrh5"]
 
@@ -97,19 +97,19 @@ shape = SubResource("CapsuleShape2D_ynrh5")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC2"]
 position = Vector2(-3462.7485, 1741.0691)
-scale = Vector2(5.3160157, 4.551794)
-texture = ExtResource("11_cdbuu")
+scale = Vector2(67.98142, 58.208527)
+texture = ExtResource("11_ynrh5")
 
 [node name="NPC3" type="Area2D" parent="."]
 position = Vector2(572.2958, 56.423527)
 script = ExtResource("12_1v5ov")
 
-[node name="Boy2" type="Sprite2D" parent="NPC3"]
-position = Vector2(6319.435, 3038.81)
-scale = Vector2(57.36718, 61.3354)
-texture = ExtResource("12_ynrh5")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3"]
-position = Vector2(6327.4956, 3079.1128)
-scale = Vector2(98.36434, 117.47107)
+position = Vector2(6327.4956, 3079.1123)
+scale = Vector2(98.364334, 117.47106)
 shape = SubResource("CapsuleShape2D_upguj")
+
+[node name="Boy2" type="Sprite2D" parent="NPC3"]
+position = Vector2(6319.434, 3038.81)
+scale = Vector2(57.367176, 61.335396)
+texture = ExtResource("12_ynrh5")

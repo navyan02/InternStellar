@@ -595,7 +595,7 @@ texture = ExtResource("16_wyetc")
 [node name="GreenScreen" type="Sprite2D" parent="OpeningScene"]
 modulate = Color(1, 1, 1, 0.2784314)
 z_index = 3
-position = Vector2(64.50674, -1086.3357)
+position = Vector2(65.00001, -1230)
 scale = Vector2(1.11875, 1.2166667)
 texture = ExtResource("12_613f1")
 
