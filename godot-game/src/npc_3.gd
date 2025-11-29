@@ -10,7 +10,9 @@ func _ready():
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		_show_dialog("Oh Hey! Its weird your team is normally your team would be here by now for coffee. You should go meet them! ")
+		_show_dialog("Oh Hey! Its weird your team is normally your team would be here by now for coffee. Let me go introduce them to you! ")
+		await get_tree().create_timer(7.0).timeout
+		get_tree().change_scene_to_file("res://src//OpenLvl1/openlvl1.tscn")
 
 func _show_dialog(text: String):
 	var dialog = get_tree().get_first_node_in_group("dialog")

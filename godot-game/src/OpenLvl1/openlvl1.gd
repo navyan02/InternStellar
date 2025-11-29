@@ -6,9 +6,9 @@ extends AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	play("opening")
+	play("openlvl1")
 	await animation_finished
-	get_tree().change_scene_to_file("res://src/Office.tscn")
+	get_tree().change_scene_to_file("res://src/lab.tscn")
 
 func show_message(text: String):
 	message_label.text = text

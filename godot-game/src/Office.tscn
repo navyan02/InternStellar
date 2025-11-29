@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://jmwttottf74j"]
+[gd_scene load_steps=25 format=3 uid="uid://jmwttottf74j"]
 
 [ext_resource type="Texture2D" uid="uid://wrthydkx10mc" path="res://assets/Office/OfficeBackground.png" id="1_ujhis"]
+[ext_resource type="Script" uid="uid://cyv62ycmpuham" path="res://src/office.gd" id="1_upguj"]
 [ext_resource type="Texture2D" uid="uid://dn4xj27xsnsba" path="res://assets/Office/coffeepot.png" id="2_hye3w"]
 [ext_resource type="Texture2D" uid="uid://cmb1pr1oqls07" path="res://assets/Office/Table.png" id="3_vfgj6"]
 [ext_resource type="Texture2D" uid="uid://by2vbjdiyujh1" path="res://assets/Office/Flower.png" id="4_3xwue"]
@@ -12,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://t4x28uy2bxb3" path="res://src/npc1.tscn" id="10_3xwue"]
 [ext_resource type="Script" uid="uid://d1yju2kryg6rn" path="res://src/npc_2.gd" id="10_iqa1n"]
 [ext_resource type="Texture2D" uid="uid://bufxqmj7igntc" path="res://assets/characters/girl2.png" id="11_ynrh5"]
-[ext_resource type="Script" path="res://src/npc_3.gd" id="12_1v5ov"]
+[ext_resource type="Script" uid="uid://bedjn8o15neni" path="res://src/npc_3.gd" id="12_1v5ov"]
 [ext_resource type="Texture2D" uid="uid://cuu5uxn0by77k" path="res://assets/characters/boy2.png" id="12_ynrh5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1v5ov"]
@@ -141,6 +142,7 @@ _data = {
 [node name="Office" type="Node2D"]
 position = Vector2(918, 416)
 scale = Vector2(0.12406171, 0.12406171)
+script = ExtResource("1_upguj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(564.23535, 1547.617)

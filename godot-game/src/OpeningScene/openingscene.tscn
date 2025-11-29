@@ -287,7 +287,7 @@ tracks/2/keys = {
 "args": ["Welp.", 3.0],
 "method": &"show_message"
 }, {
-"args": ["Noooooooooooooooooooooooo", 3.0, true],
+"args": ["Intern: Nooooooooooooo", 2.0, true],
 "method": &"show_message"
 }, {
 "args": ["I'M LATE!!!!", 2.0, true],
