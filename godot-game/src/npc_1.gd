@@ -4,6 +4,9 @@
 extends Area2D
 class_name npc1
 
+signal interactedWithNPC1
+
+
 func _ready():
 	input_event.connect(_on_input_event)
 	set_pickable(true)
@@ -11,7 +14,8 @@ func _ready():
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		_show_dialog("You must be the new intern! Welcome! Your team is great!")
-
+		interactedWithNPC1.emit()
+		
 func _show_dialog(text: String):
 	var dialog = get_tree().get_first_node_in_group("dialog")
 	if dialog and dialog.has_method("show_message"):
