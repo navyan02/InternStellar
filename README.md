@@ -1,7 +1,7 @@
 # InternStellar 🚀
 
 InternStellar is a story-driven pixel-art adventure game built in Godot.  
-You play as a new NASA intern who oversleeps on her first day—only to arrive at the office and discover that her entire research team has mysteriously vanished after working on a classified alien investigation. It’s now up to you to explore, solve puzzles, uncover clues, and figure out what really happened.
+You play as a new NASA intern who oversleeps on her first day, only to arrive at the office and discover that her entire research team has mysteriously vanished after working on a classified alien investigation. It’s now up to you to explore, solve puzzles, uncover clues, and figure out what really happened.
 
 > 🎥 **Final Presentation Video**  
 > [https://drive.google.com/file/d/1bVcu7Amihx393pYy02enrD1nfNwmZ5ti/view?usp=sharing](https://drive.google.com/file/d/1bVcu7Amihx393pYy02enrD1nfNwmZ5ti/view?usp=sharing)
