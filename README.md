@@ -26,7 +26,7 @@ InternStellar/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/navyan02/InternStellar.git
+git clone [https://github.com/navyan02/InternStellar.git](https://github.com/navyan02/InternStellar)
 cd InternStellar
 ```
 
